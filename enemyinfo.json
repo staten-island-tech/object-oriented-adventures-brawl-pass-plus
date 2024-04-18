@@ -1,0 +1,56 @@
+[
+ {
+    "Name": "Slime",
+    "ATK": 5,
+    "HP": 50,
+    "Skill": "N/A"
+ },
+ {
+    "Name": "Goblin",
+    "ATK": 10,
+    "HP": 75,
+    "Skill": "N/A"
+ },
+ {
+    "Name": "Spear Goblin",
+    "ATK": 12,
+    "HP": 60,
+    "Skill": "N/A"
+ },
+ {
+    "Name": "Skeleton",
+    "ATK": 20,
+    "HP": 100,
+    "Skill": "N/A"
+ }, 
+ {
+    "Name": "Ghost",
+    "ATK": 15,
+    "HP": 80,
+    "Skill": "N/A"
+ },
+ {
+    "Name": "Wizard",
+    "ATK": 35,
+    "HP": 75,
+    "Skill": "N/A"
+ },
+ {
+    "Name": "Witch",
+    "ATK": 40,
+    "HP": 70,
+    "Skill": "N/A"
+ },
+ {
+    "Name": "Knight",
+    "ATK": 20,
+    "HP": 150,
+    "Skill": "N/A"
+ },
+ {
+    "Name": "Archer",
+    "ATK": 55,
+    "HP": 80,
+    "Skill": "N/A"
+ }
+]

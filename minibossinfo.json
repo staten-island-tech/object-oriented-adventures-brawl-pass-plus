@@ -1,0 +1,50 @@
+[
+    {
+       "Name": "Goblin Shaman",
+       "ATK": 20,
+       "HP": 225,
+       "Skill": "N/A"
+    },
+    {
+       "Name": "Vengeful Spirit",
+       "ATK": 25,
+       "HP": 100,
+       "Skill": "Reduces adventurer damage by 10%"
+    },
+    {
+       "Name": "Archmage",
+       "ATK": 5,
+       "HP": 100,
+       "Skill": "Summons 2 Skeletons"
+    },
+    {
+       "Name": "Hydra",
+       "ATK": 20,
+       "HP": 30,
+       "Skill": "The stats of each head, 9 heads in total"
+    }, 
+    {
+       "Name": "Dragon",
+       "ATK": 100,
+       "HP": 100,
+       "Skill": "If the dragon hits you, you will be inflicted with burn which deals 10 dmg each time you attack"
+    },
+    {
+       "Name": "Paladin",
+       "ATK": 50,
+       "HP": 200,
+       "Skill": "Increases damage reduction of all allies by 10%"
+    },
+    {
+       "Name": "Royal Guard",
+       "ATK": 75,
+       "HP": 100,
+       "Skill": "25% chance to crit (2x damage)"
+    },
+    {
+       "Name": "Demon Giant",
+       "ATK": 75,
+       "HP": 500,
+       "Skill": "N/A"
+    }
+   ]
