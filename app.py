@@ -23,19 +23,55 @@ class bosses(mobs):
         self.skill = skill
 
 class slime(basicenemies):
-    def __init__(self):
-        name = "Slime"
-        atk = 5
-        hp = 50
+    def __init__(self, name, atk, hp):
+        self.name = "Slime"
+        self.atk = 5
+        self.hp = 50
 
 class goblin(basicenemies):
-    def __init__(self):
-        name = "Goblin"
-        atk = 10
-        hp = 75
+    def __init__(self, name, atk, hp):
+        self.name = "Goblin"
+        self.atk = 10
+        self.hp = 75
 
 class speargoblin(basicenemies):
-    def __init__(self):
-        name = "Spear Goblin"
-        atk = 12
-        hp = 60
+    def __init__(self, name, atk, hp):
+        self.name = "Spear Goblin"
+        self.atk = 12
+        self.hp = 60
+
+class skeleton(basicenemies):
+    def __init__(self, name, atk, hp):
+        self.name = "Skeleton"
+        self.atk = 20
+        self.hp = 100
+
+class ghost(basicenemies):
+    def __init__(self, name, atk, hp):
+        self.name = "Ghost"
+        self.atk = 15
+        self.hp = 80
+
+class wizard(basicenemies):
+    def __init__(self, name, atk, hp):
+        self.name = "Wizard"
+        self.atk = 35
+        self.hp = 75
+
+class witch(basicenemies):
+    def __init__(self, name, atk, hp):
+        self.name = "Witch"
+        self.atk = 40
+        self.hp = 70
+
+class knight(basicenemies):
+    def __init__(self, name, atk, hp):
+        self.name = "Knight"
+        self.atk = 20
+        self.hp = 150
+
+class archer(basicenemies):
+    def __init__(self, name, atk, hp):
+        self.name = "Archer"
+        self.atk = 55
+        self.hp = 80
