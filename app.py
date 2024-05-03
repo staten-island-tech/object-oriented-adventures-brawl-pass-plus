@@ -82,3 +82,44 @@ class archer(basicenemies):
         self.atk = 55
         self.hp = 80
 
+class goblinshaman(minibosses):
+    def __init__(self):
+        self.name = "Goblin Shaman"
+        self.atk = 20
+        self.hp = 225
+
+class vengefulspirit(minibosses):
+    def __init__(self):
+        self.name = "Vengeful Spirit"
+        self.atk = 100
+        self.hp = 25
+
+class hydra(minibosses):
+    def __init__(self):
+        self.name = "Hydra"
+        self.atk = 20*9
+        self.hp = 30*9
+
+class dragon(minibosses):
+    def __init__(self):
+        self.name = "Dragon"
+        self.atk = 100
+        self.hp = 100
+
+class archmage(minibosses):
+    def __init__(self):
+        self.name = "Arch Mage"
+        self.atk = 5
+        self.hp = 100
+
+class paladin(minibosses):
+    def __init__(self):
+        self.name = "Paladin"
+        self.atk = 50
+        self.hp = 200
+
+class royalguard(minibosses):
+    def __init__(self):
+        self.name = "Royal Guard"
+        self.atk = 75
+        self.hp = 100
