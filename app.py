@@ -123,3 +123,4 @@ class royalguard(minibosses):
         self.name = "Royal Guard"
         self.atk = 75
         self.hp = 100
+
