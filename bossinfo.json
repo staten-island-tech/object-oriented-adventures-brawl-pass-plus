@@ -24,7 +24,7 @@
       "Skill": "Ranks up every 4th turn increasing damage by 20%, health by 33%, and heals to ½ of new max hp (Can only activate 2 times)"
    },
    {
-      "Name": "Void King",
+      "Name": "    King",
       "ATK": 500,
       "HP": 12000,
       "Skill": "5% chance to stun every ATK"
