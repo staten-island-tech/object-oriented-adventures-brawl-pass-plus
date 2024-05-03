@@ -56,7 +56,7 @@ if Begin == 'START':
     elif New_Save == 'N':
       F = input("Open A Previous Save? ")
       if F == 'Y':
-        print("Work in Progress")
+        print("")
       if F == 'N':
         print("Stop Trolling and Get a Life")
 if Begin == 'EXIT':
