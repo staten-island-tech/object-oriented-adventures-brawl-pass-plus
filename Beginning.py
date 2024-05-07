@@ -1,15 +1,19 @@
+import json
+import os
+## Create Class for creating new dictionaries here
+
+
+with open("data.json", "r") as f:
+    # Serialize the updated Python list to a JSON string
+    data = json.load(f)
+    ##Call classes in here
+    
 Character_Name = []
 Faction = []
 HP = 0
 ATK = 0
 ENERGY = 0
-import json
-import os
 
-## Create Class for creating new dictionaries here
-with open("characterinfo.json", "r") as f:
-# Serialize the updated Python list to a JSON string
- data = json.load(f)
 class main_character():
     def __init__(self, Name, Role, HP, ATK, ENERGY):
         self.Name = Name
@@ -17,6 +21,12 @@ class main_character():
         self.HP = HP
         self.ATK = ATK
         self.ENERGY = ENERGY
+
+def Search_CharacterName(data):
+  Z = input("Input Character Name: ")
+  for main_character in data:
+   if Z in main_character['Name'] :
+    print(print(main_character['Name'], main_character['Role'], main_character['HP'], main_character['ATK'], main_character['ENERGY']))
         
 
 print("Welcome to Derek's Brainrot Simulator")
@@ -24,7 +34,6 @@ Begin = input("Type 'START' to start a new game and 'EXIT' to exit game ")
 if Begin == 'START':
     New_Save = input("Start a new save file? (Y/N) ")
     if New_Save == 'Y':
-     Character_Name.clear
      while input:
       Name = input("Input Charcter Name: ")
       print("Confirm to name your character", Name, "? (Y/N) ")
@@ -72,19 +81,11 @@ if Begin == 'START':
        Name = ' '
     elif New_Save == 'N':
       F = input("Open A Previous Save? ")
-      if F == 'Y':
-        print("")
       if F == 'N':
         print("Stop Trolling and Get a Life")
 if Begin == 'EXIT':
  print("Womp Womp")
  print("Exiting Game")
-
-class brawlers():
- def __init__(self,Character_Name,rarity,role):
-        self.name = Character_Name
-        self.rarity = rarity
-        self.role = role
 
 #No code needed below this line
 # Creates a new JSON file with the updated data
