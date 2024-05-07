@@ -9,5 +9,24 @@ class combat():
     print("1 attack 2 enhance attack 3 heal 4 retreat 5 exit game")
     def attack(cdata):
         if input == "1":
-            character ["ATK"] - enemies ["HP"]
-    def enhance_attack
+            enemies ["HP"] - character ["ATK"]
+    def enhance_attack(cdata):
+        if input == "2":
+            print ("how much energy do you want to use")
+            if input >= character ["ENERGY"]:
+                print ("you don't have enough energy")
+            else:
+                input + character ["ATK"]
+    def heal(cdata):
+        if input == "3":
+            print ("how much energy do you want to use")
+            if input >= character ["ENERGY"]:
+                print ("you don't have enough energy")
+            else:
+                input + character ["HP"]
+    def retreat():
+        if input == "4":
+            print ("retreating from battle")
+    def exit_game():
+        if input == "5":
+            print ("exiting game")
