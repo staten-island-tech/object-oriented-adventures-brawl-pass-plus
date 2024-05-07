@@ -11,12 +11,13 @@ with open("characterinfo.json", "r") as f:
 # Serialize the updated Python list to a JSON string
  data = json.load(f)
 class main_character():
-    def __init__(self, Name, HP, ATK, ENERGY, Role):
+    def __init__(self, Name, Role, HP, ATK, ENERGY):
         self.Name = Name
+        self.Role = Role
         self.HP = HP
         self.ATK = ATK
         self.ENERGY = ENERGY
-        self.Role = Role
+        
 
 print("Welcome to Derek's Brainrot Simulator")
 Begin = input("Type 'START' to start a new game and 'EXIT' to exit game ")
@@ -64,7 +65,7 @@ if Begin == 'START':
          print("HP:", HP)
          print("ATK:", ATK)
          print("ENERGY:", ENERGY)
-         main_character = main_character(Name, HP, ATK, ENERGY, Role)
+         main_character = main_character(Name, Role, HP, ATK, ENERGY)
          data.append(main_character.__dict__)
          break
       if Confirm == 'N':
