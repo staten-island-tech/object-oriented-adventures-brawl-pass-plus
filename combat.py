@@ -38,6 +38,7 @@ class combat(battle):
 class enemycombat(battle):
     while battle:
         character["HP"] - enemies["ATK"]
+        print ("the enemy did ", enemies["ATK"], " dmg to you and you have ", character["HP"], "Hp remaining")
         if enemies["HP"] == 0:
             break
         print("Battle Won")
