@@ -30,3 +30,8 @@ class combat():
     def exit_game():
         if input == "5":
             print ("exiting game")
+
+class enemycombat():
+    enemies["ATK"] - character["HP"]
+    if enemies["HP"] == 0:
+        print("Battle Won")
