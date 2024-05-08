@@ -63,3 +63,9 @@ if Begin == 'EXIT':
  print("Womp Womp")
  print("Exiting Game")
 
+class brawlers():
+ def __init__(self,Character_Name,rarity,role):
+        self.name = Character_Name
+        self.rarity = rarity
+        self.role = role
+
