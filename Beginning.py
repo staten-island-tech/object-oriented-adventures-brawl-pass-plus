@@ -3,7 +3,7 @@ import os
 ## Create Class for creating new dictionaries here
 
 
-with open("data.json", "r") as f:
+with open("characterinfo.json", "r") as f:
     # Serialize the updated Python list to a JSON string
     data = json.load(f)
     ##Call classes in here

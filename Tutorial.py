@@ -29,20 +29,20 @@ class battle():
         self.combat = combat
         self.enemycombat = enemycombat
 class combat(battle):
-    input("1 attack 2 enhance attack 3 heal 4 retreat 5 exit game")
+    input("1 attack 2 enhance attack 3 heal 4 retreat 5 exit game ")
     def attack(cdata):
         if input == "1":
             enemies ["HP"] - character ["ATK"]
     def enhance_attack(cdata):
         if input == "2":
-            print ("how much energy do you want to use")
+            input ("how much energy do you want to use")
             if input >= character ["ENERGY"]:
                 print ("you don't have enough energy")
             else:
                 input + character ["ATK"]
     def heal(cdata):
         if input == "3":
-            print ("how much energy do you want to use")
+            input ("how much energy do you want to use")
             if input >= character ["ENERGY"]:
                 print ("you don't have enough energy")
             else:
