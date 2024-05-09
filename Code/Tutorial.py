@@ -23,7 +23,7 @@ class EnemyFinder():
     print("HP:",basic_enemies['HP'])
     print("ATK:",basic_enemies['ATK'])
 EnemyFinder.Search_EnemyName(data)
-E = enemies
+
 
 class battle():
     def __init__(self,combat, enemycombat):
