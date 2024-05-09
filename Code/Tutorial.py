@@ -23,35 +23,41 @@ class EnemyFinder():
     print("HP:",basic_enemies['HP'])
     print("ATK:",basic_enemies['ATK'])
 EnemyFinder.Search_EnemyName(data)
+E = enemies
 
 class battle():
     def __init__(self,combat, enemycombat):
         self.combat = combat
         self.enemycombat = enemycombat
 class combat(battle):
-    input("1 attack 2 enhance attack 3 heal 4 retreat 5 exit game ")
     def attack(cdata):
-        if input == "1":
-            enemies ["HP"] - character ["ATK"]
+            enemies["HP"] - character["ATK"]
     def enhance_attack(cdata):
-        if input == "2":
-            input ("how much energy do you want to use")
+            print ("how much energy do you want to use")
             if input >= character ["ENERGY"]:
                 print ("you don't have enough energy")
             else:
                 input + character ["ATK"]
     def heal(cdata):
-        if input == "3":
-            input ("how much energy do you want to use")
+            print ("how much energy do you want to use")
             if input >= character ["ENERGY"]:
                 print ("you don't have enough energy")
             else:
                 input + character ["HP"]
     def retreat():
-        if input == "4":
             print ("retreating from battle")
     def exit_game():
-        if input == "5":
             print ("exiting game")
 
-
+print("1 attack 2 enhance attack 3 heal 4 retreat 5 exit game")
+x = input()
+if x == '1':
+    combat.attack(cdata)
+elif x == '2':
+    combat.enhance_attack(cdata)
+elif x == '3':
+    combat.heal(cdata)
+elif x == '4':
+    combat.retreat()
+elif x == '5':
+    combat.exit_game()
