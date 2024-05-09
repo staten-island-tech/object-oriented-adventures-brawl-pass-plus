@@ -16,5 +16,7 @@ class CharacterFinder():
     print("HP:",main_character['HP'])
     print("ATK:",main_character['ATK'])
     print("ENERGY:",main_character['ENERGY'])
+   else:
+    print("No character data found for", Z)
 
 CharacterFinder.Search_CharacterName(data)
