@@ -8,13 +8,21 @@ with open("characterinfo.json", "r") as f:
 
 class CharacterFinder():
  def Search_CharacterName(data):
-  Z = input("Input Character Name: ")
-  for main_character in data:
-   if Z in main_character['Name'] :
-    print("Name:",main_character['Name'])
-    print("Role:",main_character['Role'])
-    print("HP:",main_character['HP'])
-    print("ATK:",main_character['ATK'])
-    print("ENERGY:",main_character['ENERGY'])
+  while input:
+   Z = input("Input Character Name: ")
+   for main_character in data:
+    if Z in main_character['Name'] :
+     print("Name:",main_character['Name'])
+     print("Role:",main_character['Role'])
+     print("HP:",main_character['HP'])
+     print("ATK:",main_character['ATK'])
+     print("ENERGY:",main_character['ENERGY'])
+     print("Confirm to load",Z,"? (Y/N) ")
+     Con = input("")
+     if Con == 'Y':
+      print("Loading save...") 
+     elif Con == 'N':
+      Z = ''
+   break
 
 CharacterFinder.Search_CharacterName(data)

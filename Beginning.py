@@ -2,7 +2,6 @@ import json
 import os
 ## Create Class for creating new dictionaries here
 
-
 with open("characterinfo.json", "r") as f:
     # Serialize the updated Python list to a JSON string
     data = json.load(f)
@@ -21,13 +20,6 @@ class main_character():
         self.HP = HP
         self.ATK = ATK
         self.ENERGY = ENERGY
-
-def Search_CharacterName(data):
-  Z = input("Input Character Name: ")
-  for main_character in data:
-   if Z in main_character['Name'] :
-    print(print(main_character['Name'], main_character['Role'], main_character['HP'], main_character['ATK'], main_character['ENERGY']))
-        
 
 print("Welcome to Derek's Brainrot Simulator")
 Begin = input("Type 'START' to start a new game and 'EXIT' to exit game ")
@@ -56,6 +48,8 @@ if Begin == 'START':
          print("HP:", HP)
          print("ATK:", ATK)
          print("ENERGY:", ENERGY)
+         main_character = main_character(Name, Role, HP, ATK, ENERGY)
+         data.append(main_character.__dict__)
          break
        elif Role == 'Mage':
          HP = 80
@@ -65,6 +59,8 @@ if Begin == 'START':
          print("HP:", HP)
          print("ATK:", ATK)
          print("ENERGY:", ENERGY)
+         main_character = main_character(Name, Role, HP, ATK, ENERGY)
+         data.append(main_character.__dict__)
          break
        elif Role == 'Archer':
          HP = 100
@@ -80,8 +76,12 @@ if Begin == 'START':
       if Confirm == 'N':
        Name = ' '
     elif New_Save == 'N':
-      F = input("Open A Previous Save? ")
-      if F == 'N':
+      while input:
+       F = input("Open A Previous Save? ")
+       if F == 'Y':
+        from FindCharacter import CharacterFinder
+        CharacterFinder.Search_CharacterName(data)
+       else:
         print("Stop Trolling and Get a Life")
 if Begin == 'EXIT':
  print("Womp Womp")
