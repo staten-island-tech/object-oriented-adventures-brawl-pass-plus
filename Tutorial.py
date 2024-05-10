@@ -4,4 +4,5 @@ data = json.load(enemies)
 character = open("characterinfo.json", encoding="utf8")
 cdata = json.load(character)
 
-print("Welcome to the tutorial", "Name")
+def Welcome():
+ print("Welcome to the tutorial")

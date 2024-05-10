@@ -21,6 +21,26 @@ class main_character():
         self.ATK = ATK
         self.ENERGY = ENERGY
 
+class CharacterFinder():
+ def Search_CharacterName(data):
+  while input:
+   Z = input("Input Character Name: ")
+   for main_character in data:
+    if Z in (main_character['Name']) :
+     print("Name:",main_character['Name'])
+     print("Role:",main_character['Role'])
+     print("HP:",main_character['HP'])
+     print("ATK:",main_character['ATK'])
+     print("ENERGY:",main_character['ENERGY'])
+     print("Confirm to load",Z,"? (Y/N) ")
+     break
+   Con = input("")
+   if Con == 'Y':
+    print("Loading save...")
+    break
+   elif Con == 'N':
+    Z = ''
+
 print("Welcome to Derek's Brainrot Simulator")
 Begin = input("Type 'START' to start a new game and 'EXIT' to exit game ")
 if Begin == 'START':
@@ -76,10 +96,8 @@ if Begin == 'START':
       if Confirm == 'N':
        Name = ' '
     elif New_Save == 'N':
-      while input:
        F = input("Open A Previous Save? ")
        if F == 'Y':
-        from FindCharacter import CharacterFinder
         CharacterFinder.Search_CharacterName(data)
        else:
         print("Stop Trolling and Get a Life")
