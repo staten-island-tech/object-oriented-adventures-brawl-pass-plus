@@ -25,13 +25,14 @@ class EnemyFinder():
 EnemyFinder.Search_EnemyName(data)
 
 
+
 class battle():
     def __init__(self,combat, enemycombat):
         self.combat = combat
         self.enemycombat = enemycombat
 class combat(battle):
     def attack(cdata):
-            enemies["HP"] - character["ATK"]
+        enemies['HP'] - character['ATK']
     def enhance_attack(cdata):
             print ("how much energy do you want to use")
             if input >= character ["ENERGY"]:
