@@ -13,6 +13,7 @@ HP = 0
 ATK = 0
 ENERGY = 0
 
+
 class main_character():
     def __init__(self, Name, Role, HP, ATK, ENERGY):
         self.Name = Name
