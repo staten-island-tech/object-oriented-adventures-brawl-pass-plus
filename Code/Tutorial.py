@@ -23,7 +23,7 @@ class EnemyFinder():
     print("HP:",basic_enemies['HP'])
     print("ATK:",basic_enemies['ATK'])
 
-class combat(EnemyFinder):
+class combat():
     def attack(cdata):
         enemies['HP'] - character['ATK']
     def enhance_attack(cdata):
