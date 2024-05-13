@@ -1,7 +1,7 @@
 import json
 enemies = open("enemyinfo.json", encoding="utf8")
-data = json.load(enemies)
 character = open("characterinfo.json", encoding="utf8")
+data = json.load(enemies)
 cdata = json.load(character)
 
 class battle():
@@ -10,7 +10,10 @@ class battle():
         self.enemycombat = enemycombat
 class combat(battle):
     def attack(cdata):
-            enemies ["HP"] - character ["ATK"]
+        if "Slime" in enemies['Name']:
+         HP = enemies['HP']
+         ATK = character['ATK']
+         print(HP - ATK)
     def enhance_attack(cdata):
             print ("how much energy do you want to use")
             if input >= character ["ENERGY"]:
