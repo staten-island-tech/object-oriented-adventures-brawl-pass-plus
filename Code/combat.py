@@ -10,10 +10,14 @@ class CharacterFinder():
         for main_character in cdata:
             if Z in main_character['Name'] :
                 print("Welcome to the tutorial", main_character["Name"])
-CharacterFinder.Search_CharacterName(cdata)
 
 
 class combat():
+ def Search_CharacterName(cdata):
+    Z = input("Input Character Name: ")
+    for main_character in cdata:
+     if Z in main_character['Name'] :
+      print("Welcome to the tutorial", main_character["Name"])
  def Search_EnemyName(data):
   E = input("Input Enemy Name: ")
   for basic_enemies in data:
@@ -24,9 +28,16 @@ class combat():
     basic_enemies = enemies
  def attack():
     E = input("Input Enemy Name: ")
+    Z = input("Input Character Name: ")
     for basic_enemies in data:
-        if E in basic_enemies['Name'] :
-            str(enemies ["HP"]) - str(character ["ATK"])
+        for main_character in cdata:
+            if Z in main_character['Name']:
+                if E in basic_enemies['Name']:
+                    x = (basic_enemies["HP"])
+                    y = (main_character["ATK"])
+                    finalhp = x - y
+                    print (finalhp)
+    
  def enhance_attack():
     input ("how much energy do you want to use")
     if input >= character ["ENERGY"]:
@@ -47,14 +58,14 @@ class combat():
 combat.Search_EnemyName(data)
 
 print("1 attack 2 enhance attack 3 heal 4 retreat 5 exit game")
-x = input()
-if x == '1':
+X = input()
+if X == '1':
     combat.attack()
-elif x == '2':
+elif X == '2':
     combat.enhance_attack()
-elif x == '3':
+elif X == '3':
     combat.heal()
-elif x == '4':
+elif X == '4':
     combat.retreat()
-elif x == '5':
+elif X == '5':
     combat.exit_game()
