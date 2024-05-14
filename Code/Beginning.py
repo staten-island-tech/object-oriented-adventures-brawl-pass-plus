@@ -104,30 +104,6 @@ if Begin == 'START':
 if Begin == 'EXIT':
  print("Womp Womp")
  print("Exiting Game")
-
-class Roles():
-  def __init__(self, Role, HP, ATK, ENERGY):
-    self.Role = Role
-    self.HP = HP
-    self.ATK = ATK
-    self.ENERGY = ENERGY
-  def Archer():
-    Role = 'Archer'
-    HP = 100
-    ATK = 15
-    ENERGY = 150
-  def Warrior(self, Role, HP, ATK, ENERGY):
-    Role = 'Warrior'
-    HP = 120
-    ATK = 20
-    ENERGY = 100
-  def Mage(self, Role, HP, ATK, ENERGY):
-    Role = 'Mage'
-    HP = 80
-    ATK = 10
-    ENERGY = 200
-
-
 #No code needed below this line
 # Creates a new JSON file with the updated data
 new_file = "updated.json"
