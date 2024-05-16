@@ -5,26 +5,29 @@ data = json.load(enemies)
 cdata = json.load(character)
 
 Character = []
+Enemy = []
+Enemy_HP = ''
+Character_Energy = ''
+Character_ATK = ''
 
 class combat():
  def Search_CharacterName(cdata):
-    Character.clear
     Z = input("Input Character Name: ")
     for main_character in cdata:
      if Z in main_character['Name'] :
       Character.append(main_character['Name'])
-      print("Welcome to the tutorial", Character)
+      Character_Energy.append(main_character['ENERGY'])
+      Character_ATK.append(main_character['ATK'])
  def Search_EnemyName(data):
   E = input("Input Enemy Name: ")
   for basic_enemies in data:
    if E in basic_enemies['Name'] :
-    print("Name:",basic_enemies['Name'])
-    print("HP:",basic_enemies['HP'])
-    print("ATK:",basic_enemies['ATK']) 
-    basic_enemies = enemies
+    Enemy.append(basic_enemies['Name'])
+    Enemy_HP.append(basic_enemies['HP'])
+    print("Welcome to the tutorial", Character)
  def attack():
-    E = input("Input Enemy Name: ")
-    Z = input("Input Character Name: ")
+    E = ''.join(Enemy)
+    Z = ''.join(Character)
     for basic_enemies in data:
         for main_character in cdata:
             if Z in main_character['Name']:
@@ -32,35 +35,40 @@ class combat():
                     x = (basic_enemies["HP"])
                     y = (main_character["ATK"])
                     finalhp = x - y
+                    Enemy_HP.append(finalhp)
                     print (finalhp)
     
  def enhance_attack():
-    input ("how much energy do you want to use")
-    if input >= character ["ENERGY"]:
-        print ("you don't have enough energy")
+    X = input ("how much energy do you want to use? ")
+    print(Character_Energy)
+    Y = ''.join(Character_Energy)
+    if X > Y:
+        print ("you don't have enough energy!")
     else:
         input + character ["ATK"]
  def heal():
-    print ("how much energy do you want to use")
+    print ("how much healing do you want to do? ")
     if input >= character ["ENERGY"]:
-        print ("you don't have enough energy")
+        print ("you don't have enough energy!")
     else:
         input + character ["HP"]
  def retreat():
-    print ("retreating from battle")
+    print ("retreating from battle (imagine being a scaredy cat)")
  def exit_game():
-    print ("exiting game")
+    print ("exiting game...")
 
 combat.Search_CharacterName(cdata)
+combat.Search_EnemyName(data)
 print("1 attack 2 enhance attack 3 heal 4 retreat 5 exit game")
 X = input()
- if X == '1':
+if X == '1':
     combat.attack()
- elif X == '2':
+elif X == '2':
     combat.enhance_attack()
- elif X == '3':
+elif X == '3':
     combat.heal()
- elif X == '4':
+elif X == '4':
     combat.retreat()
- elif X == '5':
+elif X == '5':
     combat.exit_game()
+
