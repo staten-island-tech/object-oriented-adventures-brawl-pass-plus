@@ -14,11 +14,6 @@ HP = 0
 ATK = 0
 ENERGY = 0
 
-class roles():
-  def __init__(Role, Warrior, Archer, Mage):
-    Role.Warrior = Warrior
-    Role.Archer = Archer
-    Role.Mage = Mage
 class main_character():
   def __init__(self, Role, Name, HP, ATK, ENERGY):
     self.Role = Role
@@ -26,33 +21,33 @@ class main_character():
     self.HP = HP
     self.ATK = ATK
     self.ENERGY = ENERGY
-class roles2(main_character):
-  def Warrior(Role, Name, HP, ATK, ENERGY):
-    Role.Name = "Warrior"
-    Role.HP = 120
-    Role.ATK = 20
-    Role.ENERGY = 100
+
+class roles2():
+  def Warrior(self, HP, ATK, ENERGY):
+    self.HP = HP
+    self.ATK = ATK
+    self.ENERGY = ENERGY
+    self.HP = 120
+    self.ATK = 20
+    self.ENERGY = 100
     data.append(main_character.__dict__)
-  def Archer(Role, Name, HP, ATK, ENERGY):
-    Role.Name = "Archer"
-    Role.HP = 100
-    Role.ATK = 15
-    Role.ENERGY = 150
+  def Archer(self, HP, ATK, ENERGY):
+    self.HP = HP
+    self.ATK = ATK
+    self.ENERGY = ENERGY
+    self.HP = 100
+    self.ATK = 15
+    self.ENERGY = 150
     data.append(main_character.__dict__)
-  def Mage(Role, Name, HP, ATK, ENERGY):
-    Role.Name = "Mage"
-    Role.HP = 80
-    Role.ATK = 20
-    Role.ENERGY = 200
+  def Mage(self, HP, ATK, ENERGY):
+    self.HP = HP
+    self.ATK = ATK
+    self.ENERGY = ENERGY
+    self.HP = 80
+    self.ATK = 20
+    self.ENERGY = 200
     data.append(main_character.__dict__)
     
-class main_character():
-    def __init__(self, Name, Role, HP, ATK, ENERGY):
-        self.Name = Name
-        self.Role = Role
-        self.HP = HP
-        self.ATK = ATK
-        self.ENERGY = ENERGY
 
 class CharacterFinder():
  def Search_CharacterName(data):
@@ -94,13 +89,13 @@ if Begin == 'START':
        Faction.clear
        Faction.append(Role)
        if Role == 'Warrior':
-        roles2.Warrior(data)
+        roles2.Warrior(HP, ATK, ENERGY)
         break
        elif Role == 'Mage':
-        roles2.Mage(data)
+        roles2.Mage(HP, ATK, ENERGY)
         break
        elif Role == 'Archer':
-        roles2.Archer(data)
+        roles2.Archer(HP, ATK, ENERGY)
         break
       if Confirm == 'N':
        Name = ' '
