@@ -22,7 +22,7 @@ class main_character():
     self.ATK = ATK
     self.ENERGY = ENERGY
 
-class roles2():
+class roles2(main_character):
   def Warrior(self, HP, ATK, ENERGY):
     self.HP = HP
     self.ATK = ATK
