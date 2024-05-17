@@ -6,9 +6,10 @@ cdata = json.load(character)
 
 Character = []
 Enemy = []
-Enemy_HP = ''
-Character_Energy = ''
-Character_ATK = ''
+Enemy_HP = []
+Character_Energy = []
+Character_ATK = []
+Input = []
 
 class combat():
  def Search_CharacterName(cdata):
@@ -37,15 +38,16 @@ class combat():
                     finalhp = x - y
                     Enemy_HP.append(finalhp)
                     print (finalhp)
-    
  def enhance_attack():
-    X = input ("how much energy do you want to use? ")
+    X = input("how much energy do you want to use? ")
+    Y = int(X)
+    Input.append(Y)
+    print(Input)
     print(Character_Energy)
-    Y = ''.join(Character_Energy)
-    if X > Y:
+    if Input > Character_Energy:
         print ("you don't have enough energy!")
     else:
-        input + character ["ATK"]
+        print ("you have sufficient energy")
  def heal():
     print ("how much healing do you want to do? ")
     if input >= character ["ENERGY"]:
