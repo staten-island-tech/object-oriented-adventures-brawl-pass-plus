@@ -4,41 +4,12 @@ character = open("characterinfo.json", encoding="utf8")
 data = json.load(enemies)
 cdata = json.load(character)
 
-<<<<<<< HEAD
 class CharacterFinder():
     def Search_CharacterName(cdata):
         Z = input("Input Character Name: ")
         for main_character in cdata:
             if Z in main_character['Name'] :
                 print("Welcome to the tutorial", main_character["Name"])
-=======
-class battle():
-    def __init__(self,combat, enemycombat):
-        self.combat = combat
-        self.enemycombat = enemycombat
-class combat(battle):
-    def attack(cdata):
-        if "Slime" in enemies['Name']:
-         HP = enemies['HP']
-         ATK = character['ATK']
-         print(HP - ATK)
-    def enhance_attack(cdata):
-            print ("how much energy do you want to use")
-            if input >= character ["ENERGY"]:
-                print ("you don't have enough energy")
-            else:
-                input + character ["ATK"]
-    def heal(cdata):
-            print ("how much energy do you want to use")
-            if input >= character ["ENERGY"]:
-                print ("you don't have enough energy")
-            else:
-                input + character ["HP"]
-    def retreat():
-            print ("retreating from battle")
-    def exit_game():
-            print ("exiting game")
->>>>>>> main
 
 
 class combat():
