@@ -23,20 +23,29 @@ class main_character():
     self.ENERGY = ENERGY
 
 class roles2(main_character):
-  def Warrior(HP, ATK, ENERGY):
-    HP = 120
-    ATK = 20
-    ENERGY = 100
+  def Warrior(self, HP, ATK, ENERGY):
+    self.HP = HP
+    self.ATK = ATK
+    self.ENERGY = ENERGY
+    self.HP = 120
+    self.ATK = 20
+    self.ENERGY = 100
     data.append(main_character.__dict__)
-  def Archer(HP, ATK, ENERGY):
-    HP = 100
-    ATK = 15
-    ENERGY = 150
+  def Archer(self, HP, ATK, ENERGY):
+    self.HP = HP
+    self.ATK = ATK
+    self.ENERGY = ENERGY
+    self.HP = 100
+    self.ATK = 15
+    self.ENERGY = 150
     data.append(main_character.__dict__)
-  def Mage(HP, ATK, ENERGY):
-    HP = 80
-    ATK = 20
-    ENERGY = 200
+  def Mage(self, HP, ATK, ENERGY):
+    self.HP = HP
+    self.ATK = ATK
+    self.ENERGY = ENERGY
+    self.HP = 80
+    self.ATK = 20
+    self.ENERGY = 200
     data.append(main_character.__dict__)
     
 
