@@ -4,6 +4,7 @@ character = open("characterinfo.json", encoding="utf8")
 data = json.load(enemies)
 cdata = json.load(character)
 
+<<<<<<< HEAD
 Character = []
 Enemy = []
 Enemy_HP = []
@@ -12,16 +13,29 @@ Character_ATK = []
 Character_HP = []
 Input = []
 Input2 = []
+=======
+class CharacterFinder():
+    def Search_CharacterName(cdata):
+        Z = input("Input Character Name: ")
+        for main_character in cdata:
+            if Z in main_character['Name'] :
+                print("Welcome to the tutorial", main_character["Name"])
+
+>>>>>>> origin/Derek
 
 class combat():
  def Search_CharacterName(cdata):
     Z = input("Input Character Name: ")
     for main_character in cdata:
      if Z in main_character['Name'] :
+<<<<<<< HEAD
       Character.append(main_character['Name'])
       Character_Energy.append(main_character['ENERGY'])
       Character_ATK.append(main_character['ATK'])
       Character_HP.append(main_character['HP'])
+=======
+      print("Welcome to the tutorial", main_character["Name"])
+>>>>>>> origin/Derek
  def Search_EnemyName(data):
   E = input("Input Enemy Name: ")
   for basic_enemies in data:
@@ -42,21 +56,33 @@ class combat():
                     finalhp = x - y
                     print (finalhp)
  def enhance_attack():
+<<<<<<< HEAD
     X = input("how much energy do you want to use? ")
     Y = int(X)
     Input.append(Y)
     if Input > Character_Energy:
         print ("you don't have enough energy!")
+=======
+    input ("how much energy do you want to use")
+    if input >= character ["ENERGY"]:
+        print ("you don't have enough energy")
+>>>>>>> origin/Derek
     else:
         Final_Energy = (Input + Character_Energy)
         Z = sum(Final_Energy)
         print("Your new attack is:", Z)
  def heal():
+<<<<<<< HEAD
     X = input("how much energy do you want to use? ")
     Y = int(X)
     Input2.append(Y)
     if Input2 > Character_Energy:
         print ("you don't have enough energy!")
+=======
+    print ("how much energy do you want to use")
+    if input >= character ["ENERGY"]:
+        print ("you don't have enough energy")
+>>>>>>> origin/Derek
     else:
         Final_HP = (Input2 + Character_HP)
         Z = sum(Final_HP)
@@ -67,7 +93,12 @@ class combat():
     print ("exiting game")
 
 combat.Search_EnemyName(data)
+<<<<<<< HEAD
 print("1 = [attack], 2 = [enhance attack], 3 = [heal], 4 = [retreat], 5 = [exit game]")
+=======
+
+print("1 attack 2 enhance attack 3 heal 4 retreat 5 exit game")
+>>>>>>> origin/Derek
 X = input()
 if X == '1':
     combat.attack()
