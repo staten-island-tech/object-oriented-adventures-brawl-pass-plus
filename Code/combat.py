@@ -37,13 +37,12 @@ class combat():
                     y = (main_character["ATK"])
                     finalhp = x - y
                     print (finalhp)
-    
  def enhance_attack():
     input ("how much energy do you want to use")
     if input >= character ["ENERGY"]:
         print ("you don't have enough energy")
     else:
-        input + character ["ATK"]
+        print ("you have sufficient energy")
  def heal():
     print ("how much energy do you want to use")
     if input >= character ["ENERGY"]:
