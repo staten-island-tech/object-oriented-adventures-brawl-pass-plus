@@ -10,8 +10,6 @@ class CharacterFinder():
         for main_character in cdata:
             if Z in main_character['Name'] :
                 print("Welcome to the tutorial", main_character["Name"])
-            else:
-                print("No data found for", Z)
 CharacterFinder.Search_CharacterName(cdata)
 
 class EnemyFinder():
