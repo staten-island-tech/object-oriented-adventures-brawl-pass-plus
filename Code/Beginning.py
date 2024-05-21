@@ -97,7 +97,7 @@ if Begin == 'START':
       if Confirm == 'N':
        Name = ' '
     elif New_Save == 'N':
-       F = input("Open A Previous Save? ")
+       F = input("Open A Previous Save? (Y/N)")
        if F == 'Y':
         CharacterFinder.Search_CharacterName(data)
        else:
