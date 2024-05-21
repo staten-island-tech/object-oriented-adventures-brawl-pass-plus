@@ -4,18 +4,6 @@ data = json.load(enemies)
 character = open("characterinfo.json", encoding="utf8")
 cdata = json.load(character)
 
-<<<<<<< HEAD
-from combat import combat
-print("1 = [attack], 2 = [enhance attack], 3 = [heal], 4 = [retreat], 5 = [exit game]")
-X = input()
-if X == '1':
-    combat.attack()
-elif X == '2':
-    combat.enhance_attack()
-elif X == '3':
-    combat.heal()
-elif X == '4':
-=======
 class CharacterFinder():
     def Search_CharacterName(cdata):
         Z = input("Input Character Name: ")
@@ -64,7 +52,6 @@ elif x == '2':
 elif x == '3':
     combat.heal(cdata)
 elif x == '4':
->>>>>>> origin/Derek
     combat.retreat()
-elif X == '5':
+elif x == '5':
     combat.exit_game()
