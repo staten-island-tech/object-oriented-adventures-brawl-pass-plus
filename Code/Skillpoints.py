@@ -1,6 +1,6 @@
-availableskillpoints = ()
+availableskillpoints = {}
 availableskillpoints = 1
-skillpoints_used = ()
+skillpoints_used = {}
 class skill_points():
     def skillpoints(HP, ATK, ENERGY):
         HP = ("20")
