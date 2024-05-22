@@ -8,7 +8,7 @@ Chracter = ['Derek']
 Enemy = ['Slime']
 
 while input:
- from combat import combat
+ from Combat import combat
  X = input()
  if X == '1':
     combat.attack()

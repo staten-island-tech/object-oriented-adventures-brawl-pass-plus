@@ -1,2 +1,2 @@
-while input:
-    from combat import combat  
+from Beginning import CharacterFinder
+from Combat import combat
