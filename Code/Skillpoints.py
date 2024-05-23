@@ -1,11 +1,11 @@
 availableskillpoints = 1
 skillpoints_used = []
-class skill_points():
+class skill_point():
     def skillpoints(HP, ATK, ENERGY):
         HP = 20
-        ATK = 10
+        ATK = 20
         ENERGY = 15
-    X = int(input("how much skill points do you want to use? "))
+    X = input("how much skill points do you want to use? ")
     skillpoints_used.append(X)
     if skillpoints_used > availableskillpoints:
         print ("you don't have enough skill points!")
