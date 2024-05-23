@@ -1,5 +1,5 @@
-availableskillpoints = 1
-skillpoints_used = []
+availableskillpoints = ["1"]
+skillpoints_used = [""]
 class skill_point():
     def skillpoints(HP, ATK, ENERGY):
         HP = 20
@@ -10,13 +10,10 @@ class skill_point():
     if skillpoints_used > availableskillpoints:
         print ("you don't have enough skill points!")
     else: 
-        S = input("Which stat do you want to improve? Hp, ATK, ENERGY")
+        S = input("Which stat do you want to improve? HP, ATK, ENERGY ")
         if S == 'HP':
-            from Beginning import CharacterFinder
             CharacterFinder.Search_CharacterName()
         elif S == 'ATK':
-            from Beginning import CharacterFinder
             CharacterFinder.Search_CharacterName()
         elif S == 'ENERGY':
-            from Beginning import CharacterFinder
             CharacterFinder.Search_CharacterName()
