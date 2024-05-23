@@ -22,6 +22,18 @@ class main_character():
         self.ATK = ATK
         self.ENERGY = ENERGY
 
+class CharacterFinder2():
+ def Search_CharacterName(data):
+  while input:
+   Z = input("Input Character Name: ")
+   for main_character in data:
+    if Z in (main_character['Name']) :
+     print("Name:",main_character['Name'])
+     print("Role:",main_character['Role'])
+     print("HP:",main_character['HP'])
+     print("ATK:",main_character['ATK'])
+     print("ENERGY:",main_character['ENERGY'])
+
 class CharacterFinder():
  def Search_CharacterName(data):
   while input:
@@ -120,11 +132,20 @@ class skill_point():
     else: 
         S = input("Which stat do you want to improve? HP, ATK, ENERGY ")
         if S == 'HP':
-            CharacterFinder.Search_CharacterName(data)
+          while():
+            CharacterFinder2.Search_CharacterName(data)
+            print['HP']
+            break
         elif S == 'ATK':
-            CharacterFinder.Search_CharacterName(data)
+          while():
+            CharacterFinder2.Search_CharacterName(data)
+            print['HP']
+            break
         elif S == 'ENERGY':
-            CharacterFinder.Search_CharacterName(data)
+          while():
+            CharacterFinder2.Search_CharacterName(data)
+            print['HP']
+            break
 #No code needed below this line
 # Creates a new JSON file with the updated data
 new_file = "updated.json"
