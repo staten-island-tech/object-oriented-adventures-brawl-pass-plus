@@ -135,4 +135,33 @@ while input:
     break
  elif X == '5':
     combat.exit_game()
-    break
+
+class skill_point():
+    def skillpoints(HP, ATK, ENERGY):
+        HP = 20
+        ATK = 20
+        ENERGY = 15
+    X = input("how much skill points do you want to use? ")
+    skillpoints_used.append(X)
+    if skillpoints_used > availableskillpoints:
+        print ("you don't have enough skill points!")
+    else: 
+        from Beginning import CharacterFinder2
+        S = input("Which stat do you want to improve? HP, ATK, ENERGY ")
+        if S == 'HP':
+            while():
+                CharacterFinder2.Search_CharacterName(data)
+            for main_character in data:
+                print("HP:",main_character['HP'])
+                break
+        elif S == 'ATK':
+            while():
+                CharacterFinder2.Search_CharacterName(data)
+            for main_character in data:
+                print("HP:",main_character['ATK'])
+        elif S == 'ENERGY':
+            while():
+                CharacterFinder2.Search_CharacterName(data)
+            for main_character in data:
+                print("HP:",main_character['ENERGY'])
+                break
