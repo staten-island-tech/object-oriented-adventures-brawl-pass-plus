@@ -109,43 +109,45 @@ if Begin == 'START':
       if Confirm == 'N':
        Name = ' '
     elif New_Save == 'N':
-       F = input("Open A Previous Save? (Y/N)")
+       F = input("Open A Previous Save? (Y/N) ")
        if F == 'Y':
         CharacterFinder.Search_CharacterName(data)
-       else:
-        print("Stop Trolling and Get a Life")
-if Begin == 'EXIT':
- print("Womp Womp")
- print("Exiting Game")
-
 availableskillpoints = ["1"]
 skillpoints_used = [""]
 class skill_point():
-    def skillpoints(HP, ATK, ENERGY):
-        HP = 20
-        ATK = 20
-        ENERGY = 15
-    X = input("how much skill points do you want to use? ")
-    skillpoints_used.append(X)
-    if skillpoints_used > availableskillpoints:
-        print ("you don't have enough skill points!")
-    else: 
-        S = input("Which stat do you want to improve? HP, ATK, ENERGY ")
-        if S == 'HP':
-          while():
-            CharacterFinder2.Search_CharacterName(data)
-            print['HP']
-            break
-        elif S == 'ATK':
-          while():
-            CharacterFinder2.Search_CharacterName(data)
-            print['HP']
-            break
-        elif S == 'ENERGY':
-          while():
-            CharacterFinder2.Search_CharacterName(data)
-            print['HP']
-            break
+      def skillpoints(HP, ATK, ENERGY):
+          HP = 20
+          ATK = 20
+          ENERGY = 15
+      X = input("how much skill points do you want to use? ")
+      skillpoints_used.append(X)
+      if skillpoints_used > availableskillpoints:
+          print ("you don't have enough skill points!")
+      else: 
+          S = input("Which stat do you want to improve? HP, ATK, ENERGY ")
+          if S == 'HP':
+            while():
+              CharacterFinder2.Search_CharacterName(data)
+              for main_character in data:
+                print("HP:",main_character['HP'])
+              break
+          elif S == 'ATK':
+            while():
+              CharacterFinder2.Search_CharacterName(data)
+              for main_character in data:
+                print("HP:",main_character['ATK'])
+          elif S == 'ENERGY':
+            while():
+              CharacterFinder2.Search_CharacterName(data)
+              for main_character in data:
+                print("HP:",main_character['ENERGY'])
+              break
+          else:
+            print("Stop Trolling and Get a Life")
+  break
+if Begin == 'EXIT':
+ print("Womp Womp")
+ print("Exiting Game")
 #No code needed below this line
 # Creates a new JSON file with the updated data
 new_file = "updated.json"
