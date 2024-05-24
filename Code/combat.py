@@ -98,9 +98,9 @@ class combat():
         Character_Energy.append(W)
         print("You have", Character_Energy, "energy remaining")
  def retreat():
-    print ("retreating from battle (imagine being a scaredy cat)")
+    print ("Retreating from battle (imagine being a scaredy cat)")
  def exit_game():
-    print ("exiting game...")
+    print ("Exiting game...")
 
 Status.clear()
 combat.Search_CharacterName(cdata)
@@ -119,10 +119,20 @@ while input:
  elif X == '2':
     combat.enhance_attack()
     combat.enemy_attack()
+    if Character_Status == ['Dead']:
+       print("You suck at this!!!")
+       break
  elif X == '3':
     combat.heal()
     combat.enemy_attack()
+    if Character_Status == ['Dead']:
+       print("You suck at this!!!")
+       break
  elif X == '4':
     combat.retreat()
+    print("Deleting save...")
+    print("Note: Come back when you gain some courage.")
+    break
  elif X == '5':
     combat.exit_game()
+    break
