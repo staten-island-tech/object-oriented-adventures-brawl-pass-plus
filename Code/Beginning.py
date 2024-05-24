@@ -22,6 +22,18 @@ class main_character():
         self.ATK = ATK
         self.ENERGY = ENERGY
 
+class CharacterFinder2():
+ def Search_CharacterName(data):
+  while input:
+   Z = input("Input Character Name: ")
+   for main_character in data:
+    if Z in (main_character['Name']) :
+     print("Name:",main_character['Name'])
+     print("Role:",main_character['Role'])
+     print("HP:",main_character['HP'])
+     print("ATK:",main_character['ATK'])
+     print("ENERGY:",main_character['ENERGY'])
+
 class CharacterFinder():
  def Search_CharacterName(data):
   while input:
@@ -97,11 +109,11 @@ if Begin == 'START':
       if Confirm == 'N':
        Name = ' '
     elif New_Save == 'N':
-       F = input("Open A Previous Save? ")
+       F = input("Open A Previous Save? (Y/N) ")
        if F == 'Y':
         CharacterFinder.Search_CharacterName(data)
-       else:
-        print("Stop Trolling and Get a Life")
+    else:
+      print("Stop Trolling and Get a Life")
 if Begin == 'EXIT':
  print("Womp Womp")
  print("Exiting Game")
