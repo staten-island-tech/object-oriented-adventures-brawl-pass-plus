@@ -4,9 +4,6 @@ data = json.load(enemies)
 character = open("characterinfo.json", encoding="utf8")
 cdata = json.load(character)
 
-Chracter = ['Derek']
-Enemy = ['Slime']
-
 while input:
  from Combat import combat
  X = input()
