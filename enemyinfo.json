@@ -2,139 +2,116 @@
  {
     "Name": "Slime",
     "ATK": 5,
-    "HP": 50,
-    "Skill": "N/A"
+    "HP": 50
  },
  {
     "Name": "Goblin",
     "ATK": 10,
-    "HP": 75,
-    "Skill": "N/A"
+    "HP": 75
  },
  {
     "Name": "Spear Goblin",
     "ATK": 12,
-    "HP": 60,
-    "Skill": "N/A"
+    "HP": 60
  },
  {
     "Name": "Skeleton",
     "ATK": 20,
-    "HP": 100,
-    "Skill": "N/A"
+    "HP": 100
  }, 
  {
     "Name": "Ghost",
     "ATK": 15,
-    "HP": 80,
-    "Skill": "N/A"
+    "HP": 80
  },
  {
     "Name": "Wizard",
     "ATK": 35,
-    "HP": 75,
-    "Skill": "N/A"
+    "HP": 75
  },
  {
     "Name": "Witch",
     "ATK": 40,
-    "HP": 70,
-    "Skill": "N/A"
+    "HP": 70
  },
  {
     "Name": "Knight",
     "ATK": 20,
-    "HP": 150,
-    "Skill": "N/A"
+    "HP": 150
  },
  {
     "Name": "Archer",
     "ATK": 55,
-    "HP": 80,
-    "Skill": "N/A"
+    "HP": 80
  }, 
  {
    "Name": "Goblin Shaman",
    "ATK": 20,
-   "HP": 225,
-   "Skill": "N/A"
+   "HP": 225
 },
 {
    "Name": "Vengeful Spirit",
    "ATK": 25,
-   "HP": 100,
-   "Skill": "Reduces adventurer damage by 10%"
+   "HP": 100
 },
 {
    "Name": "Archmage",
    "ATK": 5,
-   "HP": 100,
-   "Skill": "Summons 2 Skeletons"
+   "HP": 100
 },
 {
    "Name": "Hydra",
    "ATK": 20,
-   "HP": 30,
-   "Skill": "The stats of each head, 9 heads in total"
+   "HP": 30
 }, 
 {
    "Name": "Dragon",
    "ATK": 100,
-   "HP": 100,
-   "Skill": "If the dragon hits you, you will be inflicted with burn which deals 10 dmg each time you attack"
+   "HP": 100
 },
 {
    "Name": "Paladin",
    "ATK": 50,
-   "HP": 200,
-   "Skill": "Increases damage reduction of all allies by 10%"
+   "HP": 200
 },
 {
    "Name": "Royal Guard",
    "ATK": 75,
-   "HP": 100,
-   "Skill": "25% chance to crit (2x damage)"
+   "HP": 100
 },
 {
    "Name": "Demon Giant",
    "ATK": 75,
-   "HP": 500,
-   "Skill": "N/A"
+   "HP": 500
 },
 {
    "Name": "Goblin King",
    "ATK": 30,
-   "HP": 400,
-   "Skill": "N/A"
+   "HP": 400
 },
 {
   "Name": "God of Death",
   "ATK": 100,
-  "HP": 600,
-  "Skill": "N/A"
+  "HP": 600
 },
 {
   "Name": "Grand Sorcerer",
   "ATK": 20,
-  "HP": 1000,
-  "Skill": "Summons 4 Wizards/Witches every 4 turns, Summons 1 Archmage every 5 turns"
+  "HP": 1000
 },
 {
   "Name": "King Surge",
   "ATK": 50,
-  "HP": 2500,
-  "Skill": "Ranks up every 4th turn increasing damage by 20%, health by 33%, and heals to ½ of new max hp (Can only activate 2 times)"
+  "HP": 2500
 },
 {
-  "Name": "    King",
+  "Name": "Void King",
   "ATK": 500,
-  "HP": 12000,
-  "Skill": "5% chance to stun every ATK"
+  "HP": 12000
 },
 {
   "Name": "Fallen King",
-  "ATK": 0,
-  "HP": 15000,
-  "Skill": "Taunts the player every turn"
+  "ATK": 450,
+  "HP": 15000
 }
 ]

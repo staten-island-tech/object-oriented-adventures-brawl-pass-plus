@@ -7,12 +7,14 @@ cdata = json.load(character)
 Character = []
 Enemy = []
 Enemy_HP = []
+Enemy_ATK = []
 Character_Energy = []
 Character_ATK = []
 Character_HP = []
 Input = []
 Input2 = []
 Status = []
+Character_Status = []
 
 class combat():
  def Search_CharacterName(cdata):
@@ -29,7 +31,20 @@ class combat():
    if E in basic_enemies['Name'] :
     Enemy.append(basic_enemies['Name'])
     Enemy_HP.append(basic_enemies['HP'])
+    Enemy_ATK.append(basic_enemies['ATK'])
     print("Welcome to the tutorial", Character)
+ def enemy_attack():
+    x = int(''.join(map(str, Enemy_ATK)))
+    y = int(''.join(map(str, Character_HP)))
+    finalhp = (y - x)
+    if 0 >= finalhp:
+       print("You are dead")
+       X = "Dead"
+       Character_Status.append(X)
+    else:
+     Character_HP.clear()
+     Character_HP.append(finalhp)
+     print (Character,"has",finalhp,"HP remaining")
  def attack():
     x = int(''.join(map(str, Enemy_HP)))
     y = int(''.join(map(str, Character_ATK)))
@@ -95,12 +110,18 @@ while input:
  X = input()
  if X == '1':
     combat.attack()
+    combat.enemy_attack()
     if Status == ['Dead']:
+       break
+    if Character_Status == ['Dead']:
+       print("You suck at this!!!")
        break
  elif X == '2':
     combat.enhance_attack()
+    combat.enemy_attack()
  elif X == '3':
     combat.heal()
+    combat.enemy_attack()
  elif X == '4':
     combat.retreat()
  elif X == '5':
