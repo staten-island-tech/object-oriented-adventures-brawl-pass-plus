@@ -1,2 +1,3 @@
-from Beginning import CharacterFinder
-from Combat import combat
+from Beginning import CharacterFinder2
+from combat import combat
+
