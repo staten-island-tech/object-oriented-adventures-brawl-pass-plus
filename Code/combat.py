@@ -32,6 +32,7 @@ class combat():
       Character_DefaultATK.append(main_character['ATK'])
       Character_HP.append(main_character['HP'])
       Character_DefaultHP.append(main_character['HP'])
+      availableskillpoints.append(main_character['Skillpoints'])
  def Search_EnemyName(data):
   E = input("Input Enemy Name: ")
   for basic_enemies in data:
