@@ -12,15 +12,17 @@ Faction = []
 HP = 0
 ATK = 0
 ENERGY = 0
+Skillpoints = 0
 
 
 class main_character():
-    def __init__(self, Name, Role, HP, ATK, ENERGY):
+    def __init__(self, Name, Role, HP, ATK, ENERGY, Skillpoints):
         self.Name = Name
         self.Role = Role
         self.HP = HP
         self.ATK = ATK
         self.ENERGY = ENERGY
+        self.Skillpoints = Skillpoints
 
 class CharacterFinder2():
  def Search_CharacterName(data):
@@ -77,11 +79,12 @@ if Begin == 'START':
          HP = 120
          ATK = 20
          ENERGY = 100
+         Skillpoints = 0
          print(Name,"is an", Role)
          print("HP:", HP)
          print("ATK:", ATK)
          print("ENERGY:", ENERGY)
-         main_character = main_character(Name, Role, HP, ATK, ENERGY)
+         main_character = main_character(Name, Role, HP, ATK, ENERGY, Skillpoints)
          data.append(main_character.__dict__)
          break
        elif Role == 'Mage':
