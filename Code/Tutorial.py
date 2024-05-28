@@ -4,6 +4,7 @@ data = json.load(enemies)
 character = open("characterinfo.json", encoding="utf8")
 cdata = json.load(character)
 
+print ("Welcome to the tutorial, in this game you can choose who you want to fight")
 while input:
  from combat import combat
  X = input()
