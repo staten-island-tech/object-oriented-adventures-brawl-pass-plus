@@ -98,11 +98,12 @@ class combat():
         Character_Energy.append(W)
         print("You have", Character_Energy, "energy remaining")
  def retreat():
-    print ("retreating from battle (imagine being a scaredy cat)")
+    print ("Retreating from battle (imagine being a scaredy cat)")
  def exit_game():
-    print ("exiting game...")
+    print ("Exiting game...")
 
-Status.clear()
+""" Status.clear()
+Character_Status.clear()
 combat.Search_CharacterName(cdata)
 combat.Search_EnemyName(data)
 while input:
@@ -119,14 +120,26 @@ while input:
  elif X == '2':
     combat.enhance_attack()
     combat.enemy_attack()
+    if Character_Status == ['Dead']:
+       print("You suck at this!!!")
+       break
  elif X == '3':
     combat.heal()
     combat.enemy_attack()
+    if Character_Status == ['Dead']:
+       print("You suck at this!!!")
+       break
  elif X == '4':
     combat.retreat()
+    print("Deleting save...")
+    print("Note: Come back when you gain some courage.")
+    break
  elif X == '5':
     combat.exit_game()
+    break """
 
+availableskillpoints = []
+skillpoints_used = []
 class skill_point():
     def skillpoints(HP, ATK, ENERGY):
         HP = 20
@@ -137,22 +150,7 @@ class skill_point():
     if skillpoints_used > availableskillpoints:
         print ("you don't have enough skill points!")
     else: 
-        from Beginning import CharacterFinder2
-        S = input("Which stat do you want to improve? HP, ATK, ENERGY ")
+        S = input("Which stat do you want to improve? (HP, ATK, ENERGY) ")
         if S == 'HP':
-            while():
-                CharacterFinder2.Search_CharacterName(data)
-            for main_character in data:
-                print("HP:",main_character['HP'])
-                break
         elif S == 'ATK':
-            while():
-                CharacterFinder2.Search_CharacterName(data)
-            for main_character in data:
-                print("HP:",main_character['ATK'])
         elif S == 'ENERGY':
-            while():
-                CharacterFinder2.Search_CharacterName(data)
-            for main_character in data:
-                print("HP:",main_character['ENERGY'])
-                break
