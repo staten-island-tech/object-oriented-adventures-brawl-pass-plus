@@ -9,12 +9,16 @@ Enemy = []
 Enemy_HP = []
 Enemy_ATK = []
 Character_Energy = []
+Character_DefaultEnergy = []
 Character_ATK = []
+Character_DefaultATK = []
 Character_HP = []
+Character_DefaultHP = []
 Input = []
 Input2 = []
 Status = []
 Character_Status = []
+availableskillpoints = []
 
 class combat():
  def Search_CharacterName(cdata):
@@ -23,8 +27,12 @@ class combat():
      if Z in main_character['Name'] :
       Character.append(main_character['Name'])
       Character_Energy.append(main_character['ENERGY'])
+      Character_DefaultEnergy.append(main_character['ENERGY'])
       Character_ATK.append(main_character['ATK'])
+      Character_DefaultATK.append(main_character['ATK'])
       Character_HP.append(main_character['HP'])
+      Character_DefaultHP.append(main_character['HP'])
+      availableskillpoints.append(main_character['Skillpoints'])
  def Search_EnemyName(data):
   E = input("Input Enemy Name: ")
   for basic_enemies in data:
@@ -102,7 +110,30 @@ class combat():
  def exit_game():
     print ("Exiting game...")
 
-""" Status.clear()
+class skill_point():
+ def use_skillpoint():
+    X = input("how much skill points do you want to use? ")
+    if X > availableskillpoints:
+        print ("you don't have enough skill points!")
+    else: 
+        S = input("Which stat do you want to improve? (HP, ATK, ENERGY) ")
+        if S == 'HP':
+         x = int(''.join(map(str, Character_DefaultHP)))
+         New = x + 20
+         Character_DefaultHP.clear()
+         Character_DefaultHP.append(New)
+        elif S == 'ATK':
+         y = int(''.join(map(str, Character_DefaultATK)))
+         New = y + 20
+         Character_DefaultATK.clear()
+         Character_DefaultATK.append(New)
+        elif S == 'ENERGY':
+         z = int(''.join(map(str, Character_DefaultEnergy)))
+         New = z + 15
+         Character_DefaultEnergy.clear()
+         Character_DefaultEnergy.append(New)
+
+Status.clear()
 Character_Status.clear()
 combat.Search_CharacterName(cdata)
 combat.Search_EnemyName(data)
@@ -113,10 +144,18 @@ while input:
     combat.attack()
     combat.enemy_attack()
     if Status == ['Dead']:
+      I = int(''.join(map(str, availableskillpoints)))
+      New = I + 1
+      availableskillpoints.clear()
+      availableskillpoints.append(New)
+      Ask = input("Do you want to use your skillpoints? (Y/N) ")
+      if Ask == 'Y':
+        skill_point.use_skillpoint()
+      if Ask == 'N':
        break
     if Character_Status == ['Dead']:
-       print("You suck at this!!!")
-       break
+      print("You suck at this!!!")
+      break
  elif X == '2':
     combat.enhance_attack()
     combat.enemy_attack()
@@ -136,21 +175,4 @@ while input:
     break
  elif X == '5':
     combat.exit_game()
-    break """
-
-availableskillpoints = []
-skillpoints_used = []
-class skill_point():
-    def skillpoints(HP, ATK, ENERGY):
-        HP = 20
-        ATK = 20
-        ENERGY = 15
-    X = input("how much skill points do you want to use? ")
-    skillpoints_used.append(X)
-    if skillpoints_used > availableskillpoints:
-        print ("you don't have enough skill points!")
-    else: 
-        S = input("Which stat do you want to improve? (HP, ATK, ENERGY) ")
-        if S == 'HP':
-        elif S == 'ATK':
-        elif S == 'ENERGY':
+    break
