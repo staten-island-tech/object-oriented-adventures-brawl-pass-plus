@@ -117,7 +117,7 @@ class skill_point():
     print ("HP by 20")
     print ("ATK by 20")
     print ("ENERGY by 15")
-    print("Skillpoints:", availableskillpoints)
+    print("Skillpoints Available:", availableskillpoints)
     X = input("how much skill points do you want to use? ")
     Input3.clear()
     Input3.append(X)
