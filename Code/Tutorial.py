@@ -5,4 +5,4 @@ character = open("characterinfo.json", encoding="utf8")
 cdata = json.load(character)
 class tutorial():
     print ("Welcome to the tutorial, in this game you can choose the enemy you want to fight but be warned as some enemy can easily kil you so choose who you want to fight wisely")
-    from combat import combat
+    from combat import combat, skill_point
