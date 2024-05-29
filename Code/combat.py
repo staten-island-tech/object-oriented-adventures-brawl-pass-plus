@@ -41,7 +41,8 @@ class combat():
     Enemy.append(basic_enemies['Name'])
     Enemy_HP.append(basic_enemies['HP'])
     Enemy_ATK.append(basic_enemies['ATK'])
-    print("Welcome to the tutorial", Character)
+    if (basic_enemies['ATK']) > (Character['HP']):
+      print ("You are not strong enough to fight this enemy")
  def enemy_attack():
     x = int(''.join(map(str, Enemy_ATK)))
     y = int(''.join(map(str, Character_HP)))
