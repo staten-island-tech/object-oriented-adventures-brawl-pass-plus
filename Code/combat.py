@@ -16,6 +16,7 @@ Character_HP = []
 Character_DefaultHP = []
 Input = []
 Input2 = []
+Input3 = []
 Status = []
 Character_Status = []
 availableskillpoints = []
@@ -112,26 +113,34 @@ class combat():
 
 class skill_point():
  def use_skillpoint():
+    print("Skillpoints:", availableskillpoints)
     X = input("how much skill points do you want to use? ")
-    if X > availableskillpoints:
-        print ("you don't have enough skill points!")
+    Input3.clear()
+    Input3.append(X)
+    y = int(''.join(map(str, availableskillpoints)))
+    z = int(''.join(map(str, Input3)))
+    if z > y:
+         print ("You don't have enough skill points!")
     else: 
         S = input("Which stat do you want to improve? (HP, ATK, ENERGY) ")
         if S == 'HP':
          x = int(''.join(map(str, Character_DefaultHP)))
-         New = x + 20
+         New = x + (X*20)
          Character_DefaultHP.clear()
          Character_DefaultHP.append(New)
+         print(New)
         elif S == 'ATK':
          y = int(''.join(map(str, Character_DefaultATK)))
          New = y + 20
          Character_DefaultATK.clear()
          Character_DefaultATK.append(New)
+         print(New)
         elif S == 'ENERGY':
          z = int(''.join(map(str, Character_DefaultEnergy)))
          New = z + 15
          Character_DefaultEnergy.clear()
          Character_DefaultEnergy.append(New)
+         print(New)
 
 Status.clear()
 Character_Status.clear()
@@ -151,6 +160,7 @@ while input:
       Ask = input("Do you want to use your skillpoints? (Y/N) ")
       if Ask == 'Y':
         skill_point.use_skillpoint()
+        break
       if Ask == 'N':
        break
     if Character_Status == ['Dead']:
