@@ -1,8 +1,10 @@
 import json
+import os
 enemies = open("enemyinfo.json", encoding="utf8")
 character = open("characterinfo.json", encoding="utf8")
 data = json.load(enemies)
 cdata = json.load(character)
+
 
 Character = []
 Enemy = []
@@ -20,6 +22,18 @@ Input3 = []
 Status = []
 Character_Status = []
 availableskillpoints = []
+Character_Role = []
+
+
+class main_character():
+    def __init__(self, Name, Role, HP, ATK, ENERGY, Skillpoints):
+        self.Name = Name
+        self.Role = Role
+        self.HP = HP
+        self.ATK = ATK
+        self.ENERGY = ENERGY
+        self.Skillpoints = Skillpoints
+
 
 class combat():
  def Search_CharacterName(cdata):
@@ -34,19 +48,15 @@ class combat():
       Character_HP.append(main_character['HP'])
       Character_DefaultHP.append(main_character['HP'])
       availableskillpoints.append(main_character['Skillpoints'])
+      Character_Role.append(main_character['Role'])
  def Search_EnemyName(data):
-  while input:
-   E = input("Input Enemy Name: ")
-   for basic_enemies in data:
-      if E in basic_enemies['Name'] :
-         Enemy.append(basic_enemies['Name'])
-         Enemy_HP.append(basic_enemies['HP'])
-         Enemy_ATK.append(basic_enemies['ATK'])
-         if Enemy_ATK > Character_HP:
-            F = input("Are you sure you want to fight", E, "(Y/N)")
-         if F == "Y":
-            print ("You are not strong enough to fight this enemy, retreat if you want to survive but I won't stop you from fighting")
-            break
+  E = input("Input Enemy Name: ")
+  for basic_enemies in data:
+   if E in basic_enemies['Name'] :
+    Enemy.append(basic_enemies['Name'])
+    Enemy_HP.append(basic_enemies['HP'])
+    Enemy_ATK.append(basic_enemies['ATK'])
+    print("Welcome to the tutorial", Character)
  def enemy_attack():
     x = int(''.join(map(str, Enemy_ATK)))
     y = int(''.join(map(str, Character_HP)))
@@ -116,13 +126,10 @@ class combat():
  def exit_game():
     print ("Exiting game...")
 
+
 class skill_point():
  def use_skillpoint():
-    print ("For every enemy you kill you will gain one skill point, each skill point will buff your")
-    print ("HP by 20")
-    print ("ATK by 20")
-    print ("ENERGY by 15")
-    print("Skillpoints Available:", availableskillpoints)
+    print("Skillpoints:", availableskillpoints)
     X = input("how much skill points do you want to use? ")
     Input3.clear()
     Input3.append(X)
@@ -130,27 +137,35 @@ class skill_point():
     z = int(''.join(map(str, Input3)))
     if z > y:
          print ("You don't have enough skill points!")
-    else: 
+    else:
         S = input("Which stat do you want to improve? (HP, ATK, ENERGY) ")
-      
         if S == 'HP':
          x = int(''.join(map(str, Character_DefaultHP)))
-         New = x + (X*20)
+         a = int(''.join(map(str, Input3)))
+         New = x + (a*20)
          Character_DefaultHP.clear()
          Character_DefaultHP.append(New)
-         print(New)
+         print("New HP is:",New)
         elif S == 'ATK':
          y = int(''.join(map(str, Character_DefaultATK)))
-         New = y + 20
+         b = int(''.join(map(str, Input3)))
+         New = y + (b*20)
          Character_DefaultATK.clear()
          Character_DefaultATK.append(New)
-         print(New)
+         print("New ATK is:",New)
         elif S == 'ENERGY':
          z = int(''.join(map(str, Character_DefaultEnergy)))
-         New = z + 15
+         c = int(''.join(map(str, Input3)))
+         New = z + (c*15)
          Character_DefaultEnergy.clear()
          Character_DefaultEnergy.append(New)
-         print(New)
+         print("New Energy is:",New)
+        F = y - z
+        availableskillpoints.clear()
+        availableskillpoints.append(F)
+
+
+
 
 Status.clear()
 Character_Status.clear()
@@ -170,6 +185,8 @@ while input:
       Ask = input("Do you want to use your skillpoints? (Y/N) ")
       if Ask == 'Y':
         skill_point.use_skillpoint()
+        main_character = main_character(Character, Character_Role, Character_DefaultATK, Character_DefaultHP, Character_DefaultEnergy, availableskillpoints)
+        data.append(main_character.__dict__)
         break
       if Ask == 'N':
        break
@@ -196,3 +213,17 @@ while input:
  elif X == '5':
     combat.exit_game()
     break
+ 
+new_file = "updated.json"
+with open(new_file, "w") as f:
+    # Serialize the updated Python list to a JSON string
+    json_string = json.dumps(data)
+
+
+    # Write the JSON string to the new JSON file
+    f.write(json_string)
+
+
+# Overwrite the old JSON file with the new one
+os.remove("characterinfo.json")
+os.rename(new_file, "characterinfo.json")

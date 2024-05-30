@@ -2,17 +2,20 @@ import json
 import os
 ## Create Class for creating new dictionaries here
 
+
 with open("characterinfo.json", "r") as f:
     # Serialize the updated Python list to a JSON string
     data = json.load(f)
     ##Call classes in here
-    
+   
 Character_Name = []
 Faction = []
 HP = 0
 ATK = 0
 ENERGY = 0
 Skillpoints = 0
+
+
 
 
 class main_character():
@@ -23,6 +26,7 @@ class main_character():
         self.ATK = ATK
         self.ENERGY = ENERGY
         self.Skillpoints = Skillpoints
+
 
 class CharacterFinder2():
  def Search_CharacterName(data):
@@ -35,6 +39,7 @@ class CharacterFinder2():
      print("HP:",main_character['HP'])
      print("ATK:",main_character['ATK'])
      print("ENERGY:",main_character['ENERGY'])
+
 
 class CharacterFinder():
  def Search_CharacterName(data):
@@ -55,6 +60,7 @@ class CharacterFinder():
     break
    elif Con == 'N':
     Z = ''
+
 
 print("Welcome to Derek's Brainrot Simulator")
 Begin = input("Type 'START' to start a new game and 'EXIT' to exit game ")
@@ -91,22 +97,24 @@ if Begin == 'START':
          HP = 80
          ATK = 10
          ENERGY = 200
+         Skillpoints = 0
          print(Name,"is an", Role)
          print("HP:", HP)
          print("ATK:", ATK)
          print("ENERGY:", ENERGY)
-         main_character = main_character(Name, Role, HP, ATK, ENERGY)
+         main_character = main_character(Name, Role, HP, ATK, ENERGY, Skillpoints)
          data.append(main_character.__dict__)
          break
        elif Role == 'Archer':
          HP = 100
          ATK = 15
          ENERGY = 150
+         Skillpoints = 0
          print(Name,"is an", Role)
          print("HP:", HP)
          print("ATK:", ATK)
          print("ENERGY:", ENERGY)
-         main_character = main_character(Name, Role, HP, ATK, ENERGY)
+         main_character = main_character(Name, Role, HP, ATK, ENERGY, Skillpoints)
          data.append(main_character.__dict__)
          break
       if Confirm == 'N':
@@ -127,8 +135,10 @@ with open(new_file, "w") as f:
     # Serialize the updated Python list to a JSON string
     json_string = json.dumps(data)
 
+
     # Write the JSON string to the new JSON file
     f.write(json_string)
+
 
 # Overwrite the old JSON file with the new one
 os.remove("characterinfo.json")
