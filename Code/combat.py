@@ -35,14 +35,18 @@ class combat():
       Character_DefaultHP.append(main_character['HP'])
       availableskillpoints.append(main_character['Skillpoints'])
  def Search_EnemyName(data):
-  E = input("Input Enemy Name: ")
-  for basic_enemies in data:
-   if E in basic_enemies['Name'] :
-    Enemy.append(basic_enemies['Name'])
-    Enemy_HP.append(basic_enemies['HP'])
-    Enemy_ATK.append(basic_enemies['ATK'])
-   if Enemy_ATK > Character_HP:
-      print ("You are not strong enough to fight this enemy, retreat if you want to survive as fighting the enemy is futile")
+  while input:
+   E = input("Input Enemy Name: ")
+   for basic_enemies in data:
+      if E in basic_enemies['Name'] :
+         Enemy.append(basic_enemies['Name'])
+         Enemy_HP.append(basic_enemies['HP'])
+         Enemy_ATK.append(basic_enemies['ATK'])
+         if Enemy_ATK > Character_HP:
+            F = input("Are you sure you want to fight", E, "(Y/N)")
+         if F == "Y":
+            print ("You are not strong enough to fight this enemy, retreat if you want to survive but I won't stop you from fighting")
+            break
  def enemy_attack():
     x = int(''.join(map(str, Enemy_ATK)))
     y = int(''.join(map(str, Character_HP)))
