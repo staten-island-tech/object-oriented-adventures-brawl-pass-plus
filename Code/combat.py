@@ -185,7 +185,7 @@ while input:
       Ask = input("Do you want to use your skillpoints? (Y/N) ")
       if Ask == 'Y':
         skill_point.use_skillpoint()
-        main_character = main_character(Character, Character_Role, Character_DefaultATK, Character_DefaultHP, Character_DefaultEnergy, availableskillpoints)
+        main_character = main_character(Character, Character_Role, Character_DefaultHP, Character_DefaultATK, Character_DefaultEnergy, availableskillpoints)
         data.append(main_character.__dict__)
         break
       if Ask == 'N':
@@ -214,10 +214,10 @@ while input:
     combat.exit_game()
     break
  
-new_file = "updated.json"
+new_file = "newcharacterinfo.json"
 with open(new_file, "w") as f:
     # Serialize the updated Python list to a JSON string
-    json_string = json.dumps(data)
+    json_string = json.dumps(cdata)
 
 
     # Write the JSON string to the new JSON file
