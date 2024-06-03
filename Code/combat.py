@@ -7,6 +7,7 @@ cdata = json.load(character)
 
 
 Character = []
+All_Enemies = []
 Enemy = []
 Enemy_HP = []
 Enemy_ATK = []
@@ -49,6 +50,11 @@ class combat():
       Character_DefaultHP.append(main_character['HP'])
       availableskillpoints.append(main_character['Skillpoints'])
       Character_Role.append(main_character['Role'])
+ def Available_Enemies(data):
+  for basic_enemies in data:
+   X = int(''.join(map(str, Character_HP)))
+   if X > basic_enemies['HP']:
+    All_Enemies.append(basic_enemies['Name'])
  def Search_EnemyName(data):
   E = input("Input Enemy Name: ")
   for basic_enemies in data:
@@ -170,6 +176,8 @@ class skill_point():
 Status.clear()
 Character_Status.clear()
 combat.Search_CharacterName(cdata)
+combat.Available_Enemies(data)
+print("These are the enemies you can fight", All_Enemies)
 combat.Search_EnemyName(data)
 while input:
  print("1 = [attack], 2 = [enhance attack], 3 = [heal], 4 = [retreat], 5 = [exit game]")
@@ -213,17 +221,3 @@ while input:
  elif X == '5':
     combat.exit_game()
     break
- 
-new_file = "newcharacterinfo.json"
-with open(new_file, "w") as f:
-    # Serialize the updated Python list to a JSON string
-    json_string = json.dumps(cdata)
-
-
-    # Write the JSON string to the new JSON file
-    f.write(json_string)
-
-
-# Overwrite the old JSON file with the new one
-os.remove("characterinfo.json")
-os.rename(new_file, "characterinfo.json")

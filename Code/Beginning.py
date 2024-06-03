@@ -117,6 +117,9 @@ if Begin == 'START':
          main_character = main_character(Name, Role, HP, ATK, ENERGY, Skillpoints)
          data.append(main_character.__dict__)
          break
+       else:
+         print("Stop Trolling and Get a Life")
+         break
       if Confirm == 'N':
        Name = ' '
     elif New_Save == 'N':
