@@ -23,7 +23,7 @@ Status = []
 Character_Status = []
 availableskillpoints = []
 Character_Role = []
-
+Available_Enemies = []
 
 class main_character():
     def __init__(self, Name, Role, HP, ATK, ENERGY, Skillpoints):
@@ -50,6 +50,10 @@ class combat():
       availableskillpoints.append(main_character['Skillpoints'])
       Character_Role.append(main_character['Role'])
  def Search_EnemyName(data):
+  for basic_enemies in data:
+     if Enemy_HP < Character_HP:
+        Available_Enemies.append(basic_enemies)
+        print("These are the enemies you can fight", Available_Enemies)
   E = input("Input Enemy Name: ")
   for basic_enemies in data:
    if E in basic_enemies['Name'] :
