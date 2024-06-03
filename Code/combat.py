@@ -36,9 +36,9 @@ class combat():
       availableskillpoints.append(main_character['Skillpoints'])
  def Search_EnemyName(data):
    for basic_enemies in data:
-      if Enemy_HP < Character_HP:
+       if Enemy_HP < Character_HP:
          Available_Enemies.append(basic_enemies['Name'])
-         print (Available_Enemies)
+         print("These are the enemies you can fight:", Available_Enemies)
    E = input("Input Enemy Name: ")
    for basic_enemies in data:
       if E in basic_enemies['Name'] :
