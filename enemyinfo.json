@@ -5,7 +5,7 @@
     "HP": 50
  },
  {
-    "Name": "Goblin",
+    "Name": "Basic Goblin",
     "ATK": 10,
     "HP": 75
  },
@@ -22,17 +22,17 @@
  {
     "Name": "Ghost",
     "ATK": 15,
-    "HP": 150
+    "HP": 80
  },
  {
     "Name": "Wizard",
     "ATK": 35,
-    "HP": 160
+    "HP": 75
  },
  {
     "Name": "Witch",
     "ATK": 40,
-    "HP": 120
+    "HP": 70
  },
  {
     "Name": "Knight",
@@ -42,7 +42,7 @@
  {
     "Name": "Archer",
     "ATK": 55,
-    "HP": 120
+    "HP": 80
  }, 
  {
    "Name": "Goblin Shaman",
@@ -52,22 +52,22 @@
 {
    "Name": "Vengeful Spirit",
    "ATK": 25,
-   "HP": 200
+   "HP": 100
 },
 {
    "Name": "Archmage",
-   "ATK": 20,
-   "HP": 225
+   "ATK": 5,
+   "HP": 100
 },
 {
    "Name": "Hydra",
-   "ATK": 90,
+   "ATK": 180,
    "HP": 270
 }, 
 {
    "Name": "Dragon",
    "ATK": 100,
-   "HP": 280
+   "HP": 100
 },
 {
    "Name": "Paladin",
@@ -77,7 +77,7 @@
 {
    "Name": "Royal Guard",
    "ATK": 75,
-   "HP": 250
+   "HP": 100
 },
 {
    "Name": "Demon Giant",
@@ -96,22 +96,22 @@
 },
 {
   "Name": "Grand Sorcerer",
-  "ATK": 50,
+  "ATK": 20,
   "HP": 1000
 },
 {
   "Name": "King Surge",
-  "ATK": 120,
+  "ATK": 50,
   "HP": 2500
 },
 {
-  "Name": "Void King",
+  "Name": "Void Reaver",
   "ATK": 500,
-  "HP": 12000
+  "HP": 1200000
 },
 {
   "Name": "Fallen King",
   "ATK": 450,
-  "HP": 15000
+  "HP": 150000
 }
 ]
