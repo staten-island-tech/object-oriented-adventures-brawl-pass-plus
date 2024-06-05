@@ -1,117 +1,117 @@
 [
- {
-    "Name": "Slime",
-    "ATK": 5,
-    "HP": 50
- },
- {
-    "Name": "Basic Goblin",
-    "ATK": 10,
-    "HP": 75
- },
- {
-    "Name": "Spear Goblin",
-    "ATK": 12,
-    "HP": 60
- },
- {
-    "Name": "Skeleton",
-    "ATK": 20,
-    "HP": 100
- }, 
- {
-    "Name": "Ghost",
-    "ATK": 15,
-    "HP": 80
- },
- {
-    "Name": "Wizard",
-    "ATK": 35,
-    "HP": 75
- },
- {
-    "Name": "Witch",
-    "ATK": 40,
-    "HP": 70
- },
- {
-    "Name": "Knight",
-    "ATK": 20,
-    "HP": 150
- },
- {
-    "Name": "Archer",
-    "ATK": 55,
-    "HP": 80
- }, 
- {
-   "Name": "Goblin Shaman",
-   "ATK": 20,
-   "HP": 225
-},
-{
-   "Name": "Vengeful Spirit",
-   "ATK": 25,
-   "HP": 100
-},
-{
-   "Name": "Archmage",
-   "ATK": 5,
-   "HP": 100
-},
-{
-   "Name": "Hydra",
-   "ATK": 180,
-   "HP": 270
-}, 
-{
-   "Name": "Dragon",
-   "ATK": 100,
-   "HP": 100
-},
-{
-   "Name": "Paladin",
-   "ATK": 50,
-   "HP": 200
-},
-{
-   "Name": "Royal Guard",
-   "ATK": 75,
-   "HP": 100
-},
-{
-   "Name": "Demon Giant",
-   "ATK": 75,
-   "HP": 500
-},
-{
-   "Name": "Goblin King",
-   "ATK": 30,
-   "HP": 400
-},
-{
-  "Name": "God of Death",
-  "ATK": 100,
-  "HP": 600
-},
-{
-  "Name": "Grand Sorcerer",
-  "ATK": 20,
-  "HP": 1000
-},
-{
-  "Name": "King Surge",
-  "ATK": 50,
-  "HP": 2500
-},
-{
-  "Name": "Void Reaver",
-  "ATK": 500,
-  "HP": 1200000
-},
-{
-  "Name": "Fallen King",
-  "ATK": 450,
-  "HP": 150000
-}
-]
+   {
+      "Name": "Slime",
+      "ATK": 5,
+      "HP": 50
+   },
+   {
+      "Name": "Basic Goblin",
+      "ATK": 10,
+      "HP": 75
+   },
+   {
+      "Name": "Spear Goblin",
+      "ATK": 12,
+      "HP": 60
+   },
+   {
+      "Name": "Skeleton",
+      "ATK": 20,
+      "HP": 100
+   }, 
+   {
+      "Name": "Ghost",
+      "ATK": 15,
+      "HP": 150
+   },
+   {
+      "Name": "Wizard",
+      "ATK": 35,
+      "HP": 160
+   },
+   {
+      "Name": "Witch",
+      "ATK": 40,
+      "HP": 120
+   },
+   {
+      "Name": "Knight",
+      "ATK": 20,
+      "HP": 150
+   },
+   {
+      "Name": "Archer",
+      "ATK": 55,
+      "HP": 120
+   }, 
+   {
+     "Name": "Goblin Shaman",
+     "ATK": 20,
+     "HP": 225
+  },
+  {
+     "Name": "Vengeful Spirit",
+     "ATK": 25,
+     "HP": 200
+  },
+  {
+     "Name": "Archmage",
+     "ATK": 20,
+     "HP": 225
+  },
+  {
+     "Name": "Hydra",
+     "ATK": 90,
+     "HP": 270
+  }, 
+  {
+     "Name": "Dragon",
+     "ATK": 100,
+     "HP": 280
+  },
+  {
+     "Name": "Paladin",
+     "ATK": 50,
+     "HP": 200
+  },
+  {
+     "Name": "Royal Guard",
+     "ATK": 75,
+     "HP": 250
+  },
+  {
+     "Name": "Demon Giant",
+     "ATK": 75,
+     "HP": 500
+  },
+  {
+     "Name": "Goblin King",
+     "ATK": 30,
+     "HP": 400
+  },
+  {
+    "Name": "God of Death",
+    "ATK": 100,
+    "HP": 600
+  },
+  {
+    "Name": "Grand Sorcerer",
+    "ATK": 50,
+    "HP": 1000
+  },
+  {
+    "Name": "King Surge",
+    "ATK": 120,
+    "HP": 2500
+  },
+  {
+    "Name": "Void Reaver",
+    "ATK": 500,
+    "HP": 12000
+  },
+  {
+    "Name": "Fallen King",
+    "ATK": 450,
+    "HP": 15000
+  }
+  ]
