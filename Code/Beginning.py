@@ -146,3 +146,4 @@ with open(new_file, "w") as f:
 # Overwrite the old JSON file with the new one
 os.remove("characterinfo.json")
 os.rename(new_file, "characterinfo.json")
+

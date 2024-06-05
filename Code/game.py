@@ -1,2 +1,2 @@
 from Beginning import CharacterFinder
-from combat import combat
+from Tutorial import tutorial
