@@ -202,19 +202,6 @@ if Can_Fight == ['Yes']:
       if Ask == 'N':
        break
     combat.enemy_attack()
-    if Status == ['Dead']:
-      I = int(''.join(map(str, availableskillpoints)))
-      New = I + 1
-      availableskillpoints.clear()
-      availableskillpoints.append(New)
-      Ask = input("Do you want to use your skillpoints? (Y/N) ")
-      if Ask == 'Y':
-        skill_point.use_skillpoint()
-        main_character = main_character(Character, Character_Role, Character_DefaultHP, Character_DefaultATK, Character_DefaultEnergy, availableskillpoints)
-        data.append(main_character.__dict__)
-        break
-      if Ask == 'N':
-       break
     if Character_Status == ['Dead']:
       print("You suck at this!!!")
       break
@@ -240,3 +227,17 @@ if Can_Fight == ['Yes']:
     break
 else:
   Can_Fight.clear()
+
+#No code needed below this line
+# Creates a new JSON file with the updated data
+new_file = "updated.json"
+with open(new_file, "w") as f:
+    # Serialize the updated Python list to a JSON string
+    json_string = json.dumps(cdata)
+
+    # Write the JSON string to the new JSON file
+    f.write(json_string)
+
+# Overwrite the old JSON file with the new one
+os.remove("characterinfo.json")
+os.rename(new_file, "characterinfo.json")
