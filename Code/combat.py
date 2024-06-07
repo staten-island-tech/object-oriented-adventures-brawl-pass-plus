@@ -99,7 +99,7 @@ class combat():
     Input.clear()
     Input.append(Y)
     if Input > Character_Energy:
-        print ("you don't have enough energy!")
+        print ("You don't have enough energy!")
     else:
         x = int(''.join(map(str, Input)))
         y = int(''.join(map(str, Character_ATK)))
@@ -227,17 +227,3 @@ if Can_Fight == ['Yes']:
     break
 else:
   Can_Fight.clear()
-
-#No code needed below this line
-# Creates a new JSON file with the updated data
-new_file = "updated.json"
-with open(new_file, "w") as f:
-    # Serialize the updated Python list to a JSON string
-    json_string = json.dumps(cdata)
-
-    # Write the JSON string to the new JSON file
-    f.write(json_string)
-
-# Overwrite the old JSON file with the new one
-os.remove("characterinfo.json")
-os.rename(new_file, "characterinfo.json")
