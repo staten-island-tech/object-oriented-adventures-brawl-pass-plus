@@ -14,6 +14,7 @@ HP = 0
 ATK = 0
 ENERGY = 0
 Skillpoints = 0
+Character = []
 
 
 
@@ -48,6 +49,7 @@ class CharacterFinder():
    for main_character in data:
     if Z in (main_character['Name']) :
      print("Name:",main_character['Name'])
+     Character.append(main_character['Name'])
      print("Role:",main_character['Role'])
      print("HP:",main_character['HP'])
      print("ATK:",main_character['ATK'])

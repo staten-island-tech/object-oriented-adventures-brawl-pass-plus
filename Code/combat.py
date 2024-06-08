@@ -38,7 +38,7 @@ class main_character():
 
 class combat():
  def Search_CharacterName(cdata):
-    Z = input("Confirm Character Name: ")
+    Z = Character
     for main_character in cdata:
      if Z in main_character['Name'] :
       Character.append(main_character['Name'])
