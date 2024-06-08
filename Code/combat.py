@@ -181,17 +181,19 @@ class skill_point():
         availableskillpoints.clear()
         availableskillpoints.append(F)
 
-Status.clear()
-Character_Status.clear()
-combat.Search_CharacterName(cdata)
-combat.Available_Enemies(data)
-print("These are the enemies you can fight", All_Enemies)
-combat.Search_EnemyName(data)
-if Can_Fight == ['Yes']:
- while input:
-  print("1 = [attack], 2 = [enhance attack], 3 = [heal], 4 = [retreat], 5 = [exit game]")
-  X = input()
-  if X == '1':
+def actual_fighting():
+ All_Enemies.clear()
+ combat.Available_Enemies(data)
+ print("These are the enemies you can fight", All_Enemies)
+ Enemy.clear()
+ Enemy_HP.clear()
+ Enemy_ATK.clear()
+ combat.Search_EnemyName(data)
+ if Can_Fight == ['Yes']:
+  while input:
+   print("1 = [attack], 2 = [enhance attack], 3 = [heal], 4 = [retreat], 5 = [exit game]")
+   X = input()
+   if X == '1':
     combat.attack()
     if Status == ['Dead']:
       I = int(''.join(map(str, availableskillpoints)))
@@ -203,32 +205,48 @@ if Can_Fight == ['Yes']:
         skill_point.use_skillpoint()
         main_character = main_character(Character, Character_Role, Character_DefaultHP, Character_DefaultATK, Character_DefaultEnergy, availableskillpoints)
         data.append(main_character.__dict__)
-        break
+        combat.Available_Enemies(data)
+        print("These are the enemies you can fight", All_Enemies)
+        combat.Search_EnemyName(data)
+        actual_fighting()
       if Ask == 'N':
-       break
+       combat.Available_Enemies(data)
+       print("These are the enemies you can fight", All_Enemies)
+       combat.Search_EnemyName(data)
+       actual_fighting()
     combat.enemy_attack()
     if Character_Status == ['Dead']:
       print("You suck at this!!!")
-      break
-  elif X == '2':
+      combat.Available_Enemies(data)
+      print("These are the enemies you can fight", All_Enemies)
+      combat.Search_EnemyName(data)
+      actual_fighting()
+   elif X == '2':
     combat.enhance_attack()
     combat.enemy_attack()
     if Character_Status == ['Dead']:
        print("You suck at this!!!")
+       combat.Available_Enemies(data)
+       print("These are the enemies you can fight", All_Enemies)
+       combat.Search_EnemyName(data)
+       actual_fighting()
        break
-  elif X == '3':
+   elif X == '3':
     combat.heal()
     combat.enemy_attack()
     if Character_Status == ['Dead']:
        print("You suck at this!!!")
        break
-  elif X == '4':
+   elif X == '4':
     combat.retreat()
-    print("Deleting save...")
-    print("Note: Come back when you gain some courage.")
     break
-  elif X == '5':
+   elif X == '5':
     combat.exit_game()
     break
-else:
+ else:
   Can_Fight.clear()
+
+Status.clear()
+Character_Status.clear()
+combat.Search_CharacterName(cdata)
+actual_fighting()
