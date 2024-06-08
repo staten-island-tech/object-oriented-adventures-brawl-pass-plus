@@ -51,7 +51,8 @@ class CharacterFinder():
      print("Role:",main_character['Role'])
      print("HP:",main_character['HP'])
      print("ATK:",main_character['ATK'])
-     print("ENERGY:",main_character['ENERGY'])
+     print("ENERGY:",main_character['ENERGY']) q
+     print("Confirm to load",Z,"? (Y/N) ")
      break
    Con = input("")
    if Con == 'Y':
