@@ -228,16 +228,4 @@ if Can_Fight == ['Yes']:
 else:
   Can_Fight.clear()
 
-#No code needed below this line
-# Creates a new JSON file with the updated data
-new_file = "characterinfo.json"
-with open(new_file, "w") as f:
-    # Serialize the updated Python list to a JSON string
-    json_string = json.dumps(cdata)
-
-    # Write the JSON string to the new JSON file
-    f.write(json_string)
-
-# Overwrite the old JSON file with the new one
-os.remove("characterinfo.json")
-os.rename(new_file, "characterinfo.json")
+from Trial import new
