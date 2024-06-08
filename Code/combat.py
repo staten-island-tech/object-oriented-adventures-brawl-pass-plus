@@ -50,6 +50,7 @@ class combat():
       Character_DefaultHP.append(main_character['HP'])
       availableskillpoints.append(main_character['Skillpoints'])
       Character_Role.append(main_character['Role'])
+      print("Welcome to the tutorial", Character)
  def Available_Enemies(data):
   for basic_enemies in data:
    X = int(''.join(map(str, Character_HP)))
@@ -63,7 +64,6 @@ class combat():
      Enemy.append(basic_enemies['Name'])
      Enemy_HP.append(basic_enemies['HP'])
      Enemy_ATK.append(basic_enemies['ATK'])
-     print("Welcome to the tutorial", Character)
      Can_Fight.append("Yes")
   else:
     print("You cannot fight a", E)
@@ -135,7 +135,9 @@ class combat():
  def retreat():
     print ("Retreating from battle (imagine being a scaredy cat)")
  def exit_game():
-    print ("Exiting game...")
+    print("Note: Your progress will not be saved as you should be finishing this game in one sitting")
+    input("Confirm to exit game? (Y/N) ")
+    
 
 
 class skill_point():
@@ -144,40 +146,58 @@ class skill_point():
     X = input("how much skill points do you want to use? ")
     Input3.clear()
     Input3.append(X)
-    y = int(''.join(map(str, availableskillpoints)))
-    z = int(''.join(map(str, Input3)))
-    if z > y:
+    c = int(''.join(map(str, availableskillpoints)))
+    d = int(''.join(map(str, Input3)))
+    if d > c:
          print ("You don't have enough skill points!")
     else:
         S = input("Which stat do you want to improve? (HP, ATK, ENERGY) ")
         if S == 'HP':
          x = int(''.join(map(str, Character_DefaultHP)))
+         y = int(''.join(map(str, Character_DefaultATK)))
+         z = int(''.join(map(str, Character_DefaultEnergy)))
          a = int(''.join(map(str, Input3)))
          New = x + (a*20)
          Character_DefaultHP.clear()
+         Character_ATK.clear()
+         Character_Energy.clear()
          Character_DefaultHP.append(New)
-         Character_HP.clear
+         Character_HP.clear()
          Character_HP.append(New)
+         Character_ATK.append(y)
+         Character_Energy.append(z)
          print("New HP is:",New)
         elif S == 'ATK':
+         x = int(''.join(map(str, Character_DefaultHP)))
          y = int(''.join(map(str, Character_DefaultATK)))
+         z = int(''.join(map(str, Character_DefaultEnergy)))
          b = int(''.join(map(str, Input3)))
          New = y + (b*20)
          Character_DefaultATK.clear()
+         Character_HP.clear()
+         Character_Energy.clear()
          Character_DefaultATK.append(New)
-         Character_ATK.clear
+         Character_ATK.clear()
          Character_ATK.append(New)
+         Character_HP.append(x)
+         Character_Energy.append(z)
          print("New ATK is:",New)
         elif S == 'ENERGY':
+         x = int(''.join(map(str, Character_DefaultHP)))
+         y = int(''.join(map(str, Character_DefaultATK)))
          z = int(''.join(map(str, Character_DefaultEnergy)))
          c = int(''.join(map(str, Input3)))
          New = z + (c*15)
          Character_DefaultEnergy.clear()
+         Character_ATK.clear()
+         Character_HP.clear()
          Character_DefaultEnergy.append(New)
-         Character_HP.clear
-         Character_HP.append(New)
+         Character_Energy.clear()
+         Character_Energy.append(New)
+         Character_ATK.append(y)
+         Character_HP.append(x)
          print("New Energy is:",New)
-        F = y - z
+        F = c - d
         availableskillpoints.clear()
         availableskillpoints.append(F)
 
@@ -196,6 +216,7 @@ def actual_fighting():
    if X == '1':
     combat.attack()
     if Status == ['Dead']:
+      Status.clear()
       I = int(''.join(map(str, availableskillpoints)))
       New = I + 1
       availableskillpoints.clear()
@@ -203,22 +224,24 @@ def actual_fighting():
       Ask = input("Do you want to use your skillpoints? (Y/N) ")
       if Ask == 'Y':
         skill_point.use_skillpoint()
-        main_character = main_character(Character, Character_Role, Character_DefaultHP, Character_DefaultATK, Character_DefaultEnergy, availableskillpoints)
-        data.append(main_character.__dict__)
-        combat.Available_Enemies(data)
-        print("These are the enemies you can fight", All_Enemies)
-        combat.Search_EnemyName(data)
         actual_fighting()
       if Ask == 'N':
-       combat.Available_Enemies(data)
-       print("These are the enemies you can fight", All_Enemies)
-       combat.Search_EnemyName(data)
+       x = int(''.join(map(str, Character_DefaultHP)))
+       y = int(''.join(map(str, Character_DefaultATK)))
+       z = int(''.join(map(str, Character_DefaultEnergy)))
+       Character_ATK.clear()
+       Character_HP.clear()
+       Character_Energy.clear()
+       Character_ATK.append(y)
+       Character_HP.append(x)
+       Character_Energy.append(z)
        actual_fighting()
-    combat.enemy_attack()
+      else:
+        break
+    else:
+     combat.enemy_attack()
     if Character_Status == ['Dead']:
       print("You suck at this!!!")
-      combat.Available_Enemies(data)
-      print("These are the enemies you can fight", All_Enemies)
       combat.Search_EnemyName(data)
       actual_fighting()
    elif X == '2':
@@ -226,9 +249,6 @@ def actual_fighting():
     combat.enemy_attack()
     if Character_Status == ['Dead']:
        print("You suck at this!!!")
-       combat.Available_Enemies(data)
-       print("These are the enemies you can fight", All_Enemies)
-       combat.Search_EnemyName(data)
        actual_fighting()
        break
    elif X == '3':
@@ -236,13 +256,19 @@ def actual_fighting():
     combat.enemy_attack()
     if Character_Status == ['Dead']:
        print("You suck at this!!!")
+       actual_fighting()
        break
    elif X == '4':
     combat.retreat()
+    actual_fighting()
     break
    elif X == '5':
     combat.exit_game()
-    break
+    if input == "N":
+     actual_fighting()
+    elif input == "Y":
+     print ("Exiting game...")
+     break
  else:
   Can_Fight.clear()
 
