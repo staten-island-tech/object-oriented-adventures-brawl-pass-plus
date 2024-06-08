@@ -157,6 +157,7 @@ class skill_point():
          New = x + (a*20)
          Character_DefaultHP.clear()
          Character_DefaultHP.append(New)
+         print(Character_DefaultHP)
          print("New HP is:",New)
         elif S == 'ATK':
          y = int(''.join(map(str, Character_DefaultATK)))
@@ -227,3 +228,17 @@ if Can_Fight == ['Yes']:
     break
 else:
   Can_Fight.clear()
+
+#No code needed below this line
+# Creates a new JSON file with the updated data
+new_file = "characterinfo.json"
+with open(new_file, "w") as f:
+    # Serialize the updated Python list to a JSON string
+    json_string = json.dumps(cdata)
+
+    # Write the JSON string to the new JSON file
+    f.write(json_string)
+
+# Overwrite the old JSON file with the new one
+os.remove("characterinfo.json")
+os.rename(new_file, "characterinfo.json")
