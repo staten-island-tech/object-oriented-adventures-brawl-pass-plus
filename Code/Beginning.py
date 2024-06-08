@@ -52,7 +52,6 @@ class CharacterFinder():
      print("HP:",main_character['HP'])
      print("ATK:",main_character['ATK'])
      print("ENERGY:",main_character['ENERGY'])
-     print("Confirm to load",Z,"? (Y/N) ")
      break
    Con = input("")
    if Con == 'Y':
