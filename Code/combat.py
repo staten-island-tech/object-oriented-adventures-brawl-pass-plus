@@ -1,5 +1,4 @@
 import json
-import os
 enemies = open("enemyinfo.json", encoding="utf8")
 character = open("characterinfo.json", encoding="utf8")
 data = json.load(enemies)
@@ -39,7 +38,7 @@ class main_character():
 
 class combat():
  def Search_CharacterName(cdata):
-    Z = input("Input Character Name: ")
+    Z = input("Confirm Character Name: ")
     for main_character in cdata:
      if Z in main_character['Name'] :
       Character.append(main_character['Name'])
@@ -157,6 +156,8 @@ class skill_point():
          New = x + (a*20)
          Character_DefaultHP.clear()
          Character_DefaultHP.append(New)
+         Character_HP.clear
+         Character_HP.append(New)
          print("New HP is:",New)
         elif S == 'ATK':
          y = int(''.join(map(str, Character_DefaultATK)))
@@ -164,6 +165,8 @@ class skill_point():
          New = y + (b*20)
          Character_DefaultATK.clear()
          Character_DefaultATK.append(New)
+         Character_ATK.clear
+         Character_ATK.append(New)
          print("New ATK is:",New)
         elif S == 'ENERGY':
          z = int(''.join(map(str, Character_DefaultEnergy)))
@@ -171,6 +174,8 @@ class skill_point():
          New = z + (c*15)
          Character_DefaultEnergy.clear()
          Character_DefaultEnergy.append(New)
+         Character_HP.clear
+         Character_HP.append(New)
          print("New Energy is:",New)
         F = y - z
         availableskillpoints.clear()
@@ -196,18 +201,8 @@ if Can_Fight == ['Yes']:
       Ask = input("Do you want to use your skillpoints? (Y/N) ")
       if Ask == 'Y':
         skill_point.use_skillpoint()
-        a = int(''.join(map(str, Character_DefaultHP)))
-        b = int(''.join(map(str, Character_DefaultATK)))
-        c = int(''.join(map(str, Character_DefaultEnergy)))
-        d = int(''.join(map(str, availableskillpoints)))
-        main_character = main_character(Character, Character_Role, a, b, c, d)
+        main_character = main_character(Character, Character_Role, Character_DefaultHP, Character_DefaultATK, Character_DefaultEnergy, availableskillpoints)
         data.append(main_character.__dict__)
-        new_file = "characterinfo.json"
-        with open(new_file, "w") as f:
-         json_string = json.dumps(cdata)
-         f.write(json_string)
-         os.remove("characterinfo.json")
-         os.rename(new_file, "characterinfo.json")
         break
       if Ask == 'N':
        break
