@@ -136,9 +136,6 @@ class combat():
     print ("Retreating from battle (imagine being a scaredy cat)")
  def exit_game():
     print("Note: Your progress will not be saved as you should be finishing this game in one sitting")
-    input("Confirm to exit game? (Y/N) ")
-    
-
 
 class skill_point():
  def use_skillpoint():
@@ -236,8 +233,6 @@ def actual_fighting():
        Character_HP.append(x)
        Character_Energy.append(z)
        actual_fighting()
-      else:
-        break
     else:
      combat.enemy_attack()
     if Character_Status == ['Dead']:
@@ -264,11 +259,8 @@ def actual_fighting():
     break
    elif X == '5':
     combat.exit_game()
-    if input == "N":
-     actual_fighting()
-    elif input == "Y":
-     print ("Exiting game...")
-     break
+    print ("Exiting game...")
+    break
  else:
   Can_Fight.clear()
 
