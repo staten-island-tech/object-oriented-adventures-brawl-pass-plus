@@ -157,7 +157,6 @@ class skill_point():
          New = x + (a*20)
          Character_DefaultHP.clear()
          Character_DefaultHP.append(New)
-         print(Character_DefaultHP)
          print("New HP is:",New)
         elif S == 'ATK':
          y = int(''.join(map(str, Character_DefaultATK)))
