@@ -50,6 +50,7 @@ class combat():
       Character_DefaultHP.append(main_character['HP'])
       availableskillpoints.append(main_character['Skillpoints'])
       Character_Role.append(main_character['Role'])
+      Character_Status.append("Alive")
       print("Welcome to the tutorial", Character)
  def Available_Enemies(data):
   for basic_enemies in data:
@@ -75,6 +76,7 @@ class combat():
     if 0 >= finalhp:
        print("You are dead")
        X = "Dead"
+       Character_Status.clear()
        Character_Status.append(X)
     else:
      Character_HP.clear()
@@ -87,6 +89,7 @@ class combat():
     if finalhp <= 0:
        print("The Enemy is dead")
        X = "Dead"
+       Status.clear()
        Status.append(X)
     else:
      Enemy_HP.clear()
@@ -205,6 +208,7 @@ def actual_fighting():
  Enemy.clear()
  Enemy_HP.clear()
  Enemy_ATK.clear()
+ Status.append("Alive")
  combat.Search_EnemyName(data)
  if Can_Fight == ['Yes']:
   while input:
@@ -233,13 +237,23 @@ def actual_fighting():
        Character_HP.append(x)
        Character_Energy.append(z)
        actual_fighting()
-    else:
+    elif Status == ['Alive']:
      combat.enemy_attack()
-    if Character_Status == ['Dead']:
+     if Character_Status == ['Dead']:
+      Character_Status.clear()
       print("You suck at this!!!")
       Ask = input("Do you want to use your skillpoints? (Y/N) ")
       if Ask == 'Y':
         skill_point.use_skillpoint()
+        x = int(''.join(map(str, Character_DefaultHP)))
+        y = int(''.join(map(str, Character_DefaultATK)))
+        z = int(''.join(map(str, Character_DefaultEnergy)))
+        Character_ATK.clear()
+        Character_HP.clear()
+        Character_Energy.clear()
+        Character_ATK.append(y)
+        Character_HP.append(x)
+        Character_Energy.append(z)
         actual_fighting()
       if Ask == 'N':
        x = int(''.join(map(str, Character_DefaultHP)))
@@ -252,28 +266,77 @@ def actual_fighting():
        Character_HP.append(x)
        Character_Energy.append(z)
        actual_fighting()
+       break
    elif X == '2':
     combat.enhance_attack()
     combat.enemy_attack()
     if Character_Status == ['Dead']:
-       print("You suck at this!!!")
+      Character_Status.clear()
+      print("You suck at this!!!")
+      Ask = input("Do you want to use your skillpoints? (Y/N) ")
+      if Ask == 'Y':
+        skill_point.use_skillpoint()
+        x = int(''.join(map(str, Character_DefaultHP)))
+        y = int(''.join(map(str, Character_DefaultATK)))
+        z = int(''.join(map(str, Character_DefaultEnergy)))
+        Character_ATK.clear()
+        Character_HP.clear()
+        Character_Energy.clear()
+        Character_ATK.append(y)
+        Character_HP.append(x)
+        Character_Energy.append(z)
+        actual_fighting()
+      if Ask == 'N':
+       x = int(''.join(map(str, Character_DefaultHP)))
+       y = int(''.join(map(str, Character_DefaultATK)))
+       z = int(''.join(map(str, Character_DefaultEnergy)))
+       Character_ATK.clear()
+       Character_HP.clear()
+       Character_Energy.clear()
+       Character_ATK.append(y)
+       Character_HP.append(x)
+       Character_Energy.append(z)
        actual_fighting()
-       break
    elif X == '3':
     combat.heal()
     combat.enemy_attack()
     if Character_Status == ['Dead']:
-       print("You suck at this!!!")
+      Character_Status.clear()
+      print("You suck at this!!!")
+      Ask = input("Do you want to use your skillpoints? (Y/N) ")
+      if Ask == 'Y':
+        skill_point.use_skillpoint()
+        x = int(''.join(map(str, Character_DefaultHP)))
+        y = int(''.join(map(str, Character_DefaultATK)))
+        z = int(''.join(map(str, Character_DefaultEnergy)))
+        Character_ATK.clear()
+        Character_HP.clear()
+        Character_Energy.clear()
+        Character_ATK.append(y)
+        Character_HP.append(x)
+        Character_Energy.append(z)
+        actual_fighting()
+      if Ask == 'N':
+       x = int(''.join(map(str, Character_DefaultHP)))
+       y = int(''.join(map(str, Character_DefaultATK)))
+       z = int(''.join(map(str, Character_DefaultEnergy)))
+       Character_ATK.clear()
+       Character_HP.clear()
+       Character_Energy.clear()
+       Character_ATK.append(y)
+       Character_HP.append(x)
+       Character_Energy.append(z)
        actual_fighting()
-       break
    elif X == '4':
     combat.retreat()
     actual_fighting()
-    break
    elif X == '5':
     combat.exit_game()
-    print ("Exiting game...")
-    break
+    Why = input("Confirm to exit game? (Y/N) ")
+    if Why == 'N':
+     actual_fighting()
+    if Why == 'Y':
+     exit()
  else:
   Can_Fight.clear()
 
