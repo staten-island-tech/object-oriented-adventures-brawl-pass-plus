@@ -237,8 +237,21 @@ def actual_fighting():
      combat.enemy_attack()
     if Character_Status == ['Dead']:
       print("You suck at this!!!")
-      combat.Search_EnemyName(data)
-      actual_fighting()
+      Ask = input("Do you want to use your skillpoints? (Y/N) ")
+      if Ask == 'Y':
+        skill_point.use_skillpoint()
+        actual_fighting()
+      if Ask == 'N':
+       x = int(''.join(map(str, Character_DefaultHP)))
+       y = int(''.join(map(str, Character_DefaultATK)))
+       z = int(''.join(map(str, Character_DefaultEnergy)))
+       Character_ATK.clear()
+       Character_HP.clear()
+       Character_Energy.clear()
+       Character_ATK.append(y)
+       Character_HP.append(x)
+       Character_Energy.append(z)
+       actual_fighting()
    elif X == '2':
     combat.enhance_attack()
     combat.enemy_attack()
