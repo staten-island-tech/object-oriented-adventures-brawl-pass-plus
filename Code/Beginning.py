@@ -128,11 +128,9 @@ if Begin == 'START':
         CharacterFinder.Search_CharacterName(data)
     else:
       print("Stop Trolling and Get a Life")
-if Begin == 'EXIT':
+elif Begin == 'EXIT':
  print("Womp Womp")
  print("Exiting Game")
-else:
-  print("Invalid Input")
 #No code needed below this line
 # Creates a new JSON file with the updated data
 new_file = "updated.json"
