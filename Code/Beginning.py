@@ -86,7 +86,7 @@ if Begin == 'START':
          ATK = 20
          ENERGY = 100
          Skillpoints = 0
-         print(Name,"is an", Role)
+         print(Name,"is a", Role)
          print("HP:", HP)
          print("ATK:", ATK)
          print("ENERGY:", ENERGY)
@@ -98,7 +98,7 @@ if Begin == 'START':
          ATK = 10
          ENERGY = 200
          Skillpoints = 0
-         print(Name,"is an", Role)
+         print(Name,"is a", Role)
          print("HP:", HP)
          print("ATK:", ATK)
          print("ENERGY:", ENERGY)

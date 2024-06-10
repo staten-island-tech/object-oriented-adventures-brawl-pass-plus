@@ -1,3 +1,22 @@
+Character = []
+All_Enemies = []
+Enemy = []
+Enemy_HP = []
+Enemy_ATK = []
+Character_Energy = []
+Character_DefaultEnergy = []
+Character_ATK = []
+Character_DefaultATK = []
+Character_HP = []
+Character_DefaultHP = []
+Input = []
+Input2 = []
+Input3 = []
+Status = []
+Character_Status = []
+availableskillpoints = []
+Character_Role = []
+Can_Fight = []
+
 from Beginning import CharacterFinder
 from Tutorial import tutorial
-
