@@ -35,7 +35,6 @@ class main_character():
         self.ENERGY = ENERGY
         self.Skillpoints = Skillpoints
 
-
 class combat():
  def Search_CharacterName(cdata):
     Z = input("Confirm Character Name: ")
@@ -151,7 +150,8 @@ class skill_point():
     if d > c:
          print ("You don't have enough skill points!")
     else:
-        S = input("Which stat do you want to improve? (HP, ATK, ENERGY) ")
+        s = input("Which stat do you want to improve? (HP, ATK, ENERGY) ")
+        S = s.upper()
         if S == 'HP':
          x = int(''.join(map(str, Character_DefaultHP)))
          y = int(''.join(map(str, Character_DefaultATK)))
@@ -222,7 +222,8 @@ def actual_fighting():
       New = I + 1
       availableskillpoints.clear()
       availableskillpoints.append(New)
-      Ask = input("Do you want to use your skillpoints? (Y/N) ")
+      x = input("Do you want to use your skillpoints? (Y/N) ")
+      Ask = x.upper()
       if Ask == 'Y':
         skill_point.use_skillpoint()
         actual_fighting()
@@ -333,6 +334,7 @@ def actual_fighting():
    elif X == '5':
     combat.exit_game()
     Why = input("Confirm to exit game? (Y/N) ")
+    Why = z.upper()
     if Why == 'N':
      actual_fighting()
     if Why == 'Y':
