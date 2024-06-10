@@ -24,7 +24,8 @@ Status = []
 Character_Status = []
 availableskillpoints = []
 Character_Role = []
-Available_Enemies = []
+Can_Fight = []
+
 
 class main_character():
     def __init__(self, Name, Role, HP, ATK, ENERGY, Skillpoints):
@@ -57,12 +58,17 @@ class combat():
     All_Enemies.append(basic_enemies['Name'])
  def Search_EnemyName(data):
   E = input("Input Enemy Name: ")
-  for basic_enemies in data:
-   if E in basic_enemies['Name'] :
-    Enemy.append(basic_enemies['Name'])
-    Enemy_HP.append(basic_enemies['HP'])
-    Enemy_ATK.append(basic_enemies['ATK'])
-    print("Welcome to the tutorial", Character)
+  if E in All_Enemies:
+   for basic_enemies in data:
+    if E in basic_enemies['Name'] :
+     Enemy.append(basic_enemies['Name'])
+     Enemy_HP.append(basic_enemies['HP'])
+     Enemy_ATK.append(basic_enemies['ATK'])
+     print("Welcome to the tutorial", Character)
+     Can_Fight.append("Yes")
+  else:
+    print("You cannot fight a", E)
+    Can_Fight.append("No")
  def enemy_attack():
     x = int(''.join(map(str, Enemy_ATK)))
     y = int(''.join(map(str, Character_HP)))
@@ -170,21 +176,18 @@ class skill_point():
         availableskillpoints.clear()
         availableskillpoints.append(F)
 
-
-
-
 Status.clear()
 Character_Status.clear()
 combat.Search_CharacterName(cdata)
 combat.Available_Enemies(data)
 print("These are the enemies you can fight", All_Enemies)
 combat.Search_EnemyName(data)
-while input:
- print("1 = [attack], 2 = [enhance attack], 3 = [heal], 4 = [retreat], 5 = [exit game]")
- X = input()
- if X == '1':
+if Can_Fight == ['Yes']:
+ while input:
+  print("1 = [attack], 2 = [enhance attack], 3 = [heal], 4 = [retreat], 5 = [exit game]")
+  X = input()
+  if X == '1':
     combat.attack()
-    combat.enemy_attack()
     if Status == ['Dead']:
       I = int(''.join(map(str, availableskillpoints)))
       New = I + 1
@@ -198,26 +201,43 @@ while input:
         break
       if Ask == 'N':
        break
+    combat.enemy_attack()
     if Character_Status == ['Dead']:
       print("You suck at this!!!")
       break
- elif X == '2':
+  elif X == '2':
     combat.enhance_attack()
     combat.enemy_attack()
     if Character_Status == ['Dead']:
        print("You suck at this!!!")
        break
- elif X == '3':
+  elif X == '3':
     combat.heal()
     combat.enemy_attack()
     if Character_Status == ['Dead']:
        print("You suck at this!!!")
        break
- elif X == '4':
+  elif X == '4':
     combat.retreat()
     print("Deleting save...")
     print("Note: Come back when you gain some courage.")
     break
- elif X == '5':
+  elif X == '5':
     combat.exit_game()
     break
+else:
+  Can_Fight.clear()
+
+#No code needed below this line
+# Creates a new JSON file with the updated data
+new_file = "updated.json"
+with open(new_file, "w") as f:
+    # Serialize the updated Python list to a JSON string
+    json_string = json.dumps(cdata)
+
+    # Write the JSON string to the new JSON file
+    f.write(json_string)
+
+# Overwrite the old JSON file with the new one
+os.remove("characterinfo.json")
+os.rename(new_file, "characterinfo.json")

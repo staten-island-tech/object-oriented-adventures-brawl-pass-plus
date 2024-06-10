@@ -45,7 +45,7 @@ class combat():
 
 combat.Search_CharacterName(cdata)
 combat.Available_Enemies(data)
-print("These are the enemys you can fight", Enemy)
+print("These are the enemies you can fight", Enemy)
 
 
   
